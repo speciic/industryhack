@@ -216,13 +216,10 @@ export default function App() {
           {/* Logo Mark (Left aligned) */}
           <div className="flex-1 flex justify-start">
             <a href="#" className="flex items-center gap-2.5 sm:gap-3 text-white font-display font-bold text-xs md:text-sm tracking-tight no-underline group">
-              <div className="w-7 h-7 md:w-8 md:h-8 bg-[#123A63]/80 border border-[#EAF2FA]/30 group-hover:border-[#FFB800] flex items-center justify-center rounded-none text-[#FFB800] font-mono font-bold transition-colors">
+              <div className="w-7 h-7 md:w-8 md:h-8 bg-[#123A63]/80 border border-[#EAF2FA]/30 group-hover:border-[#FFB800] flex items-center justify-center rounded-lg text-[#FFB800] font-mono font-bold transition-colors">
                 SIH
               </div>
-              <div className="flex flex-col">
-                <span className="leading-none text-white font-extrabold text-xs md:text-sm tracking-wider">SPEC INDUSTRY HACK</span>
-                <span className="text-[8px] md:text-[9px] font-mono text-[#E8483C] tracking-widest mt-0.5 uppercase">[DWG: SIH-2026]</span>
-              </div>
+              <span className="leading-none text-white font-extrabold text-xs md:text-sm tracking-wider">SPEC INDUSTRY HACK</span>
             </a>
           </div>
 
