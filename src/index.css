@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.1em;
 }
 
-/* Signature Register Now CTA (Safety Yellow + Technical Offset Annotation Box) */
+/* Signature Register Now CTA (Safety Yellow + Curved Pill Format) */
 .btn-illuminated {
   display: inline-flex;
   align-items: center;
@@ -142,13 +142,12 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 0.8rem 1.85rem;
-  border-radius: 0px;
+  border-radius: 9999px;
   border: 2px solid var(--accent-signal);
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 0 0 3px var(--bg-blueprint), 0 0 0 5px var(--line-white);
+  box-shadow: 0 0 16px rgba(255, 184, 0, 0.4);
   transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
-  animation: signalBlink 2.5s infinite steps(1);
   position: relative;
   user-select: none;
   white-space: nowrap;
@@ -158,12 +157,12 @@ h1, h2, h3, h4, h5, h6 {
 .btn-illuminated:hover {
   background-color: #FFCA28;
   transform: translateY(-2px);
-  box-shadow: 0 0 0 2px var(--bg-blueprint), 0 0 0 4px var(--accent-signal);
+  box-shadow: 0 0 22px rgba(255, 184, 0, 0.7);
 }
 
 .btn-illuminated:active {
   transform: translateY(0);
-  box-shadow: 0 0 0 2px var(--bg-blueprint), 0 0 0 3px var(--accent-signal);
+  box-shadow: 0 0 12px rgba(255, 184, 0, 0.5);
 }
 
 .btn-illuminated-lg {
@@ -210,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Secondary Ghost / Technical Outline Button */
+/* Secondary Ghost / Technical Outline Button (Curved Pill Format) */
 .btn-ghost {
   display: inline-flex;
   align-items: center;
@@ -224,7 +223,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 0.8rem 1.85rem;
-  border-radius: 0px;
+  border-radius: 9999px;
   border: 1px solid var(--line-white);
   text-decoration: none;
   cursor: pointer;
@@ -243,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.05rem;
 }
 
-/* Blueprint Section Header Tags */
+/* Blueprint Section Header Tags (Curved Pill Badge Format) */
 .section-tag {
   display: inline-flex;
   align-items: center;
@@ -254,8 +253,8 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--accent-stamp);
   background-color: rgba(232, 72, 60, 0.1);
   border: 1px solid var(--accent-stamp);
-  padding: 0.35rem 0.85rem;
-  border-radius: 0px;
+  padding: 0.35rem 0.95rem;
+  border-radius: 9999px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
@@ -274,11 +273,11 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 680px;
 }
 
-/* Cards & Blueprint Drafting Panels (Sharp 0px Corners) */
+/* Cards & Blueprint Panels (Curved 1rem / 16px Corners) */
 .tech-card {
   background-color: var(--bg-panel);
   border: 1px solid var(--line-dim);
-  border-radius: 0px;
+  border-radius: 1rem;
   padding: 1.75rem;
   transition: border-color 0.2s ease, background-color 0.2s ease;
   position: relative;

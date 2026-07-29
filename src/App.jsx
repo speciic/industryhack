@@ -321,11 +321,11 @@ export default function App() {
 
           {/* Event Dates & Venue Card Strip */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-10 text-xs font-mono">
-            <div className="flex items-center gap-2.5 px-4 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none text-[#FFFFFF]">
+            <div className="flex items-center gap-2.5 px-4 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-full text-[#FFFFFF]">
               <Calendar className="w-4 h-4 text-[#E8483C]" />
               <span>1st–2nd August 2026</span>
             </div>
-            <div className="flex items-center gap-2.5 px-4 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none text-[#FFFFFF]">
+            <div className="flex items-center gap-2.5 px-4 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-full text-[#FFFFFF]">
               <MapPin className="w-4 h-4 text-[#FFB800]" />
               <span>St. Peter&apos;s Engineering College Campus</span>
             </div>
@@ -351,7 +351,7 @@ export default function App() {
           {/* Blueprint Key Stats Bar with Dimension Lines */}
           <div className="pt-8 border-t border-[#EAF2FA]/20">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none relative">
+              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl relative">
                 <div className="text-2xl sm:text-3xl font-extrabold font-display text-white">24+</div>
                 <div className="text-xs font-mono text-[#9FB8D4] mt-1">Hours Non-Stop</div>
                 <div className="mt-3 pt-2 border-t border-[#EAF2FA]/20 text-[10px] font-mono text-[#6B8BAE]">
@@ -359,7 +359,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none relative">
+              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl relative">
                 <div className="text-2xl sm:text-3xl font-extrabold font-display text-[#FFB800]">1000+</div>
                 <div className="text-xs font-mono text-[#9FB8D4] mt-1">Participants</div>
                 <div className="mt-3 pt-2 border-t border-[#EAF2FA]/20 text-[10px] font-mono text-[#6B8BAE]">
@@ -367,7 +367,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none relative">
+              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl relative">
                 <div className="text-2xl sm:text-3xl font-extrabold font-display text-white">200</div>
                 <div className="text-xs font-mono text-[#9FB8D4] mt-1">Innovator Teams</div>
                 <div className="mt-3 pt-2 border-t border-[#EAF2FA]/20 text-[10px] font-mono text-[#6B8BAE]">
@@ -375,7 +375,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none relative">
+              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl relative">
                 <div className="text-2xl sm:text-3xl font-extrabold font-display text-[#FFB800]">₹1,00,000</div>
                 <div className="text-xs font-mono text-[#9FB8D4] mt-1">Prize Pool</div>
                 <div className="mt-3 pt-2 border-t border-[#EAF2FA]/20 text-[10px] font-mono text-[#6B8BAE]">
@@ -383,7 +383,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="col-span-2 md:col-span-1 p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none relative">
+              <div className="col-span-2 md:col-span-1 p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl relative">
                 <div className="text-2xl sm:text-3xl font-extrabold font-display text-white">15</div>
                 <div className="text-xs font-mono text-[#9FB8D4] mt-1">Industry Partners</div>
                 <div className="mt-3 pt-2 border-t border-[#EAF2FA]/20 text-[10px] font-mono text-[#6B8BAE]">
@@ -498,7 +498,7 @@ export default function App() {
             
             <div className="tech-card flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#FFB800] mb-6 font-mono font-bold text-base">
+                <div className="inline-flex items-center justify-center px-3.5 py-1.5 bg-[#091C33] border border-[#FFB800] rounded-xl text-[#FFB800] mb-6 font-mono font-bold text-xs whitespace-nowrap shadow-sm">
                   [DOM-01]
                 </div>
                 <div className="flex items-center gap-2 mb-3">
@@ -510,15 +510,15 @@ export default function App() {
                 </p>
               </div>
               <div className="pt-4 border-t border-[#EAF2FA]/20 flex flex-wrap gap-2 text-[11px] font-mono">
-                <span className="px-2 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15">Machine Learning</span>
-                <span className="px-2 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15">NLP / Vision</span>
-                <span className="px-2 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15">Predictive Ops</span>
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Machine Learning</span>
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">NLP / Vision</span>
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Predictive Ops</span>
               </div>
             </div>
 
             <div className="tech-card flex flex-col justify-between border-[#E8483C]/50">
               <div>
-                <div className="w-12 h-12 bg-[#091C33] border border-[#E8483C]/50 rounded-none flex items-center justify-center text-[#E8483C] mb-6 font-mono font-bold text-base">
+                <div className="inline-flex items-center justify-center px-3.5 py-1.5 bg-[#091C33] border border-[#E8483C] rounded-xl text-[#E8483C] mb-6 font-mono font-bold text-xs whitespace-nowrap shadow-sm">
                   [DOM-02]
                 </div>
                 <div className="flex items-center gap-2 mb-3">
@@ -530,15 +530,15 @@ export default function App() {
                 </p>
               </div>
               <div className="pt-4 border-t border-[#EAF2FA]/20 flex flex-wrap gap-2 text-[11px] font-mono">
-                <span className="px-2 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15">Autonomous Agents</span>
-                <span className="px-2 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15">Multi-Agent Systems</span>
-                <span className="px-2 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15">LLM Tool Use</span>
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Autonomous Agents</span>
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Multi-Agent Systems</span>
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">LLM Tool Use</span>
               </div>
             </div>
 
             <div className="tech-card flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#FFB800] mb-6 font-mono font-bold text-base">
+                <div className="inline-flex items-center justify-center px-3.5 py-1.5 bg-[#091C33] border border-[#FFB800] rounded-xl text-[#FFB800] mb-6 font-mono font-bold text-xs whitespace-nowrap shadow-sm">
                   [DOM-03]
                 </div>
                 <div className="flex items-center gap-2 mb-3">
@@ -550,15 +550,15 @@ export default function App() {
                 </p>
               </div>
               <div className="pt-4 border-t border-[#EAF2FA]/20 flex flex-wrap gap-2 text-[11px] font-mono">
-                <span className="px-2 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15">Web &amp; Cloud API</span>
-                <span className="px-2 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15">Microservices</span>
-                <span className="px-2 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15">Real-Time UI</span>
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Web &amp; Cloud API</span>
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Microservices</span>
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Real-Time UI</span>
               </div>
             </div>
 
           </div>
 
-          <div className="max-w-2xl mx-auto text-center p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none text-xs font-mono text-[#9FB8D4]">
+          <div className="max-w-2xl mx-auto text-center p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-xl text-xs font-mono text-[#9FB8D4]">
             <span className="text-[#E8483C] font-bold">[NOTE]</span> Problem statements are provided directly by our industry partners to ensure real-world technical relevance.
           </div>
 
@@ -570,6 +570,10 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="section-tag mx-auto">
+              <Building2 className="w-3.5 h-3.5" />
+              <span>Core Mission</span>
+            </div>
             <h2 className="section-title">Event Objectives</h2>
             <p className="section-subtitle mx-auto">
               Constructed to cultivate technical rigor, real-world execution, and collaborative engineering excellence.
@@ -578,8 +582,8 @@ export default function App() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#E8483C] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
+              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#E8483C] mb-4">
                 <Building2 className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-2">Solve Real Industry Challenges</h3>
@@ -588,8 +592,8 @@ export default function App() {
               </p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#FFB800] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
+              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#FFB800] mb-4">
                 <Users className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-2">Promote Innovation &amp; Teamwork</h3>
@@ -598,8 +602,8 @@ export default function App() {
               </p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#E8483C] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
+              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#E8483C] mb-4">
                 <Globe className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-2">Bridge Academia &amp; Industry</h3>
@@ -608,8 +612,8 @@ export default function App() {
               </p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#FFB800] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
+              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#FFB800] mb-4">
                 <Terminal className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-2">Practical Hands-On Exposure</h3>
@@ -618,8 +622,8 @@ export default function App() {
               </p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none sm:col-span-2 lg:col-span-1">
-              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#E8483C] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl sm:col-span-2 lg:col-span-1">
+              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#E8483C] mb-4">
                 <Award className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-2">Foster Entrepreneurship &amp; Excellence</h3>
@@ -638,6 +642,10 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="section-tag mx-auto">
+              <Layers className="w-3.5 h-3.5" />
+              <span>3-Stage Sequence</span>
+            </div>
             <h2 className="section-title">Hackathon Progression Structure</h2>
             <p className="section-subtitle mx-auto">
               A rigorous 3-stage evaluation framework designed to test raw algorithmic execution, architectural ideation, and full-stack building.
@@ -646,7 +654,7 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative mb-8">
             
-            <div className="bg-[#123A63] border border-[#EAF2FA]/30 rounded-none p-6 flex flex-col justify-between relative">
+            <div className="bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl p-6 flex flex-col justify-between relative">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="font-mono text-xs font-bold text-[#E8483C] px-3 py-1 bg-[#091C33] border border-[#E8483C]/40">
@@ -742,7 +750,7 @@ export default function App() {
                       setActiveTimelineDay(1);
                       setSelectedStageIndex(0);
                     }}
-                    className={`px-6 sm:px-8 py-3 border font-bold transition-all cursor-pointer flex items-center gap-3 ${
+                    className={`px-6 sm:px-8 py-3 border font-bold transition-all cursor-pointer flex items-center gap-3 rounded-full ${
                       activeTimelineDay === 1
                         ? 'bg-[#123A63] text-[#FFB800] border-[#FFB800] shadow-[0_0_16px_rgba(255,184,0,0.3)] -translate-y-0.5'
                         : 'bg-[#091C33] text-[#9FB8D4] border-[#EAF2FA]/20 hover:border-[#FFB800]/50 hover:text-white'
@@ -757,7 +765,7 @@ export default function App() {
                       setActiveTimelineDay(2);
                       setSelectedStageIndex(0);
                     }}
-                    className={`px-6 sm:px-8 py-3 border font-bold transition-all cursor-pointer flex items-center gap-3 ${
+                    className={`px-6 sm:px-8 py-3 border font-bold transition-all cursor-pointer flex items-center gap-3 rounded-full ${
                       activeTimelineDay === 2
                         ? 'bg-[#123A63] text-[#FFB800] border-[#FFB800] shadow-[0_0_16px_rgba(255,184,0,0.3)] -translate-y-0.5'
                         : 'bg-[#091C33] text-[#9FB8D4] border-[#EAF2FA]/20 hover:border-[#FFB800]/50 hover:text-white'
@@ -770,7 +778,7 @@ export default function App() {
 
                 {/* CONNECTED ROADMAP TRACK */}
                 <div className="max-w-4xl mx-auto space-y-6">
-                  <div className="bg-[#123A63] border-2 border-[#EAF2FA]/30 p-5 sm:p-8 relative">
+                  <div className="bg-[#123A63] border-2 border-[#EAF2FA]/30 p-5 sm:p-8 relative rounded-2xl">
                     <div className="flex items-center justify-between mb-6 font-mono text-xs border-b border-[#EAF2FA]/15 pb-3">
                       <div className="flex items-center gap-2 text-[#FFB800] font-bold uppercase tracking-wider">
                         <Zap className="w-4 h-4 text-[#FFB800]" />
@@ -814,7 +822,7 @@ export default function App() {
                                   {ev.time.split('–')[0].trim()}
                                 </span>
 
-                                <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-none border-2 flex items-center justify-center transition-all duration-300 ${
+                                <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
                                   isSelected
                                     ? isRed
                                       ? 'bg-[#E8483C] border-white text-white shadow-[0_0_18px_rgba(232,72,60,0.7)] scale-110'
@@ -826,7 +834,7 @@ export default function App() {
                                   <IconComp className="w-4 h-4" />
                                 </div>
 
-                                <span className={`font-mono text-[8px] sm:text-[9px] mt-2 px-1.5 py-0.5 border truncate max-w-[80px] sm:max-w-[95px] text-center uppercase tracking-tighter ${
+                                <span className={`font-mono text-[8px] sm:text-[9px] mt-2 px-2 py-0.5 border rounded-full truncate max-w-[80px] sm:max-w-[95px] text-center uppercase tracking-tighter ${
                                   isSelected
                                     ? 'bg-[#091C33] border-[#FFB800] text-[#FFB800] font-bold'
                                     : 'bg-[#091C33]/60 border-transparent text-[#6B8BAE]'
@@ -844,7 +852,7 @@ export default function App() {
                   {/* SPOTLIGHT STAGE CARD */}
                   <div
                     key={`spotlight-flow-${activeTimelineDay}-${safeIdx}`}
-                    className={`p-6 sm:p-8 bg-[#091C33] border-2 rounded-none volume-spotlight-anim relative ${
+                    className={`p-6 sm:p-8 bg-[#091C33] border-2 rounded-2xl volume-spotlight-anim relative ${
                       activeEvent.highlightType === 'red'
                         ? 'border-[#E8483C] shadow-[0_0_30px_rgba(232,72,60,0.3)]'
                         : activeEvent.highlightType === 'gold'
@@ -854,7 +862,7 @@ export default function App() {
                   >
                     <div className="flex flex-wrap items-center justify-between gap-4 mb-4 font-mono text-xs border-b border-[#EAF2FA]/15 pb-4">
                       <div className="flex items-center gap-3">
-                        <span className="px-2.5 py-1 bg-[#123A63] border border-[#FFB800] text-[#FFB800] font-bold">
+                        <span className="px-2.5 py-1 bg-[#123A63] border border-[#FFB800] text-[#FFB800] font-bold rounded-full">
                           STAGE {String(safeIdx + 1).padStart(2, '0')} / {String(currentEvents.length).padStart(2, '0')}
                         </span>
                         <div className="flex items-center gap-2 text-white font-bold">
@@ -863,13 +871,13 @@ export default function App() {
                         </div>
                       </div>
 
-                      <span className={`px-3 py-1 text-[11px] font-bold uppercase tracking-wider ${activeEvent.badgeStyle}`}>
+                      <span className={`px-3 py-1 text-[11px] font-bold uppercase tracking-wider rounded-full ${activeEvent.badgeStyle}`}>
                         {activeEvent.badge}
                       </span>
                     </div>
 
                     <div className="flex items-start gap-4 mb-6">
-                      <div className={`p-3.5 border shrink-0 hidden sm:flex items-center justify-center ${
+                      <div className={`p-3.5 border shrink-0 hidden sm:flex items-center justify-center rounded-xl ${
                         activeEvent.highlightType === 'red'
                           ? 'bg-[#E8483C] text-white border-white shadow-[0_0_15px_rgba(232,72,60,0.5)]'
                           : activeEvent.highlightType === 'gold'
@@ -891,22 +899,22 @@ export default function App() {
                     <div className="flex items-center justify-between pt-4 border-t border-[#EAF2FA]/15 font-mono text-xs">
                       <button
                         onClick={() => setSelectedStageIndex((prev) => (prev > 0 ? prev - 1 : currentEvents.length - 1))}
-                        className="px-4 py-2 bg-[#123A63] border border-[#EAF2FA]/30 text-[#9FB8D4] hover:text-white hover:border-[#FFB800] transition-colors cursor-pointer flex items-center gap-2"
+                        className="px-5 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 text-[#9FB8D4] hover:text-white hover:border-[#FFB800] transition-colors cursor-pointer flex items-center gap-2 rounded-full"
                       >
                         <ChevronDown className="w-4 h-4 rotate-90" />
                         <span>PREV STAGE</span>
                       </button>
 
-                      <div className="flex-1 mx-4 max-w-xs hidden sm:block bg-[#0E2A4A] h-2 border border-[#EAF2FA]/20 overflow-hidden">
+                      <div className="flex-1 mx-4 max-w-xs hidden sm:block bg-[#0E2A4A] h-2 border border-[#EAF2FA]/20 overflow-hidden rounded-full">
                         <div
-                          className="bg-[#FFB800] h-full transition-all duration-300 shadow-[0_0_8px_#FFB800]"
+                          className="bg-[#FFB800] h-full transition-all duration-300 shadow-[0_0_8px_#FFB800] rounded-full"
                           style={{ width: `${((safeIdx + 1) / currentEvents.length) * 100}%` }}
                         />
                       </div>
 
                       <button
                         onClick={() => setSelectedStageIndex((prev) => (prev < currentEvents.length - 1 ? prev + 1 : 0))}
-                        className="px-4 py-2 bg-[#123A63] border border-[#EAF2FA]/30 text-[#9FB8D4] hover:text-white hover:border-[#FFB800] transition-colors cursor-pointer flex items-center gap-2"
+                        className="px-5 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 text-[#9FB8D4] hover:text-white hover:border-[#FFB800] transition-colors cursor-pointer flex items-center gap-2 rounded-full"
                       >
                         <span>NEXT STAGE</span>
                         <ChevronDown className="w-4 h-4 -rotate-90" />
@@ -938,56 +946,56 @@ export default function App() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#FFB800] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
+              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#FFB800] mb-4">
                 <Code2 className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-1">Registration Kit</h3>
               <p className="text-xs text-[#9FB8D4]">Includes official hackathon badges, developer merch, and documentation materials for all participants.</p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#E8483C] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
+              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#E8483C] mb-4">
                 <CheckCircle2 className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-1">Day 1 Lunch &amp; Dinner</h3>
               <p className="text-xs text-[#9FB8D4]">Full buffet lunch and dinner provided on August 1st at campus dining halls.</p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#FFB800] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
+              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#FFB800] mb-4">
                 <Coffee className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-1">Day 2 Breakfast</h3>
               <p className="text-xs text-[#9FB8D4]">Hot breakfast served on the morning of August 2nd prior to final project presentations.</p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#E8483C] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
+              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#E8483C] mb-4">
                 <Coffee className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-1">Late-Night Coffee</h3>
               <p className="text-xs text-[#9FB8D4]">Unlimited coffee available continuously during late-night and early-morning coding hours.</p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#FFB800] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
+              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#FFB800] mb-4">
                 <Wifi className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-1">High-Speed Internet</h3>
               <p className="text-xs text-[#9FB8D4]">Dedicated gigabit Wi-Fi nodes deployed across all hackathon building floors.</p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#E8483C] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
+              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#E8483C] mb-4">
                 <Zap className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-1">Power &amp; Workspaces</h3>
               <p className="text-xs text-[#9FB8D4]">Ergonomic seating arrangements with dedicated power multi-sockets for every team table.</p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none sm:col-span-2 lg:col-span-2">
-              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#FFB800] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl sm:col-span-2 lg:col-span-2">
+              <div className="w-10 h-10 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#FFB800] mb-4">
                 <Music className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-1">DJ Engagement Sessions</h3>
@@ -1015,15 +1023,15 @@ export default function App() {
           </div>
 
           {/* Primary Reward: 100K Cash Prize (Industrial Blueprint Highlighted Card) */}
-          <div className="bg-[#123A63] border-2 border-[#FFB800] p-6 sm:p-8 md:p-12 mb-12 relative overflow-hidden">
+          <div className="bg-[#123A63] border-2 border-[#FFB800] p-6 sm:p-8 md:p-12 mb-12 relative overflow-hidden rounded-3xl">
             {/* Stamp & Official Tag Flex Container */}
             <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-              <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#091C33] border border-[#FFB800] text-xs font-mono text-[#FFB800] uppercase tracking-widest">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#091C33] border border-[#FFB800] text-xs font-mono text-[#FFB800] uppercase tracking-widest rounded-full">
                 <Award className="w-3.5 h-3.5 text-[#FFB800]" />
                 <span>OFFICIAL CASH PRIZE</span>
               </span>
 
-              <span className="rubber-stamp border-[#E8483C] text-[#E8483C] text-[10px] py-1 px-2.5">
+              <span className="rubber-stamp border-[#E8483C] text-[#E8483C] text-[10px] py-1 px-2.5 rounded-lg">
                 PRIMARY REWARD // APPROVED
               </span>
             </div>
@@ -1061,8 +1069,8 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-              <div className="w-12 h-12 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#E8483C] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
+              <div className="w-12 h-12 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#E8483C] mb-4">
                 <Briefcase className="w-6 h-6" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-2">Internship Opportunities</h3>
@@ -1071,8 +1079,8 @@ export default function App() {
               </p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-              <div className="w-12 h-12 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#FFB800] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
+              <div className="w-12 h-12 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#FFB800] mb-4">
                 <Sparkles className="w-6 h-6" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-2">$4,000 USD AI Credits</h3>
@@ -1081,8 +1089,8 @@ export default function App() {
               </p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-              <div className="w-12 h-12 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#E8483C] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
+              <div className="w-12 h-12 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#E8483C] mb-4">
                 <Rocket className="w-6 h-6" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-2">Startup Support</h3>
@@ -1091,8 +1099,8 @@ export default function App() {
               </p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-              <div className="w-12 h-12 bg-[#091C33] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center text-[#FFB800] mb-4">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
+              <div className="w-12 h-12 bg-[#091C33] border border-[#EAF2FA]/30 rounded-xl flex items-center justify-center text-[#FFB800] mb-4">
                 <Users className="w-6 h-6" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-2">Industry Mentorship</h3>
@@ -1123,26 +1131,26 @@ export default function App() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
             
-            <div className="h-28 bg-[#123A63] border border-[#FFB800] rounded-none p-4 flex flex-col items-center justify-center text-center group hover:bg-[#164373] transition-colors">
+            <div className="h-28 bg-[#123A63] border border-[#FFB800] rounded-2xl p-4 flex flex-col items-center justify-center text-center group hover:bg-[#164373] transition-colors">
               <div className="font-display font-extrabold text-white text-sm tracking-widest group-hover:text-[#FFB800] transition-colors">
                 SPECTRUM CIRCLE
               </div>
-              <span className="text-[9px] font-mono text-[#FFB800] mt-1.5 px-2 py-0.5 bg-[#091C33] border border-[#FFB800]">
+              <span className="text-[9px] font-mono text-[#FFB800] mt-1.5 px-2.5 py-0.5 bg-[#091C33] border border-[#FFB800] rounded-full">
                 CONFIRMED PARTNER
               </span>
             </div>
 
-            <div className="h-28 bg-[#123A63] border border-[#E8483C] rounded-none p-4 flex flex-col items-center justify-center text-center group hover:bg-[#164373] transition-colors">
+            <div className="h-28 bg-[#123A63] border border-[#E8483C] rounded-2xl p-4 flex flex-col items-center justify-center text-center group hover:bg-[#164373] transition-colors">
               <div className="font-display font-extrabold text-white text-sm tracking-widest group-hover:text-[#E8483C] transition-colors">
                 TalentFarm.ai
               </div>
-              <span className="text-[9px] font-mono text-[#E8483C] mt-1.5 px-2 py-0.5 bg-[#091C33] border border-[#E8483C]">
+              <span className="text-[9px] font-mono text-[#E8483C] mt-1.5 px-2.5 py-0.5 bg-[#091C33] border border-[#E8483C] rounded-full">
                 CONFIRMED PARTNER
               </span>
             </div>
 
             {Array.from({ length: 13 }).map((_, idx) => (
-              <div key={idx} className="h-28 bg-[#123A63] border border-[#EAF2FA]/20 rounded-none p-4 flex flex-col items-center justify-center text-center">
+              <div key={idx} className="h-28 bg-[#123A63] border border-[#EAF2FA]/20 rounded-2xl p-4 flex flex-col items-center justify-center text-center">
                 <Building2 className="w-5 h-5 text-[#6B8BAE] mb-2" />
                 <span className="text-[11px] font-mono text-[#9FB8D4]">Slot #{idx + 3}</span>
                 <span className="text-[9px] font-mono text-[#6B8BAE] mt-1">Logo Coming Soon</span>
@@ -1175,9 +1183,9 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             
-            <div className="bg-[#123A63] border-2 border-[#EAF2FA]/30 rounded-none p-8 flex flex-col justify-between">
+            <div className="bg-[#123A63] border-2 border-[#EAF2FA]/30 rounded-2xl p-8 flex flex-col justify-between">
               <div>
-                <div className="inline-block px-3 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#FFB800] font-mono text-xs font-bold rounded-none mb-4">
+                <div className="inline-block px-3 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#FFB800] font-mono text-xs font-bold rounded-full mb-4">
                   STUDENT CHAPTER
                 </div>
                 <h3 className="text-xl font-bold font-display text-white mb-3">GeeksforGeeks Student Chapter</h3>
@@ -1191,9 +1199,9 @@ export default function App() {
               </div>
             </div>
 
-            <div className="bg-[#123A63] border-2 border-[#EAF2FA]/30 rounded-none p-8 flex flex-col justify-between">
+            <div className="bg-[#123A63] border-2 border-[#EAF2FA]/30 rounded-2xl p-8 flex flex-col justify-between">
               <div>
-                <div className="inline-block px-3 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#E8483C] font-mono text-xs font-bold rounded-none mb-4">
+                <div className="inline-block px-3 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#E8483C] font-mono text-xs font-bold rounded-full mb-4">
                   TECHNICAL COMMUNITY
                 </div>
                 <h3 className="text-xl font-bold font-display text-white mb-3">Spectrum Circle</h3>
@@ -1225,7 +1233,7 @@ export default function App() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
               <div className="text-3xl font-extrabold font-mono text-[#FFB800] mb-3">01</div>
               <h3 className="text-base font-bold font-display text-white mb-2">Practical Solutions</h3>
               <p className="text-xs text-[#9FB8D4] leading-relaxed">
@@ -1233,7 +1241,7 @@ export default function App() {
               </p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
               <div className="text-3xl font-extrabold font-mono text-[#E8483C] mb-3">02</div>
               <h3 className="text-base font-bold font-display text-white mb-2">Enhanced Skill Sets</h3>
               <p className="text-xs text-[#9FB8D4] leading-relaxed">
@@ -1241,7 +1249,7 @@ export default function App() {
               </p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
               <div className="text-3xl font-extrabold font-mono text-[#FFB800] mb-3">03</div>
               <h3 className="text-base font-bold font-display text-white mb-2">Industry Alignment</h3>
               <p className="text-xs text-[#9FB8D4] leading-relaxed">
@@ -1249,7 +1257,7 @@ export default function App() {
               </p>
             </div>
 
-            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
+            <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
               <div className="text-3xl font-extrabold font-mono text-[#E8483C] mb-3">04</div>
               <h3 className="text-base font-bold font-display text-white mb-2">Long-Term Connections</h3>
               <p className="text-xs text-[#9FB8D4] leading-relaxed">
@@ -1301,7 +1309,7 @@ export default function App() {
                 a: "Problem statements authored by our industry partners will be unveiled during the Inauguration Ceremony on Day 1 (August 1, 2026)."
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
+              <div key={index} className="bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl overflow-hidden">
                 <button
                   onClick={() => toggleFaq(index)}
                   className="w-full p-5 text-left flex items-center justify-between font-display font-bold text-white hover:text-[#FFB800] transition-colors cursor-pointer"
@@ -1364,7 +1372,13 @@ export default function App() {
             </div>
 
             <div className="flex items-center gap-4 text-[#9FB8D4]">
-              <a href="#" aria-label="Instagram" className="w-9 h-9 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center hover:text-[#FFB800] hover:border-[#FFB800] transition-colors">
+              <a
+                href="https://www.instagram.com/specindustryhack?igsh=Nmg5bTRsaWkzaHN3"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-9 h-9 bg-[#123A63] border border-[#EAF2FA]/30 rounded-full flex items-center justify-center hover:text-[#FFB800] hover:border-[#FFB800] transition-colors"
+              >
                 <Instagram className="w-4 h-4" />
               </a>
               <a
@@ -1372,14 +1386,14 @@ export default function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-9 h-9 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center hover:text-[#FFB800] hover:border-[#FFB800] transition-colors"
+                className="w-9 h-9 bg-[#123A63] border border-[#EAF2FA]/30 rounded-full flex items-center justify-center hover:text-[#FFB800] hover:border-[#FFB800] transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="#" aria-label="Twitter / X" className="w-9 h-9 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center hover:text-[#FFB800] hover:border-[#FFB800] transition-colors">
+              <a href="#" aria-label="Twitter / X" className="w-9 h-9 bg-[#123A63] border border-[#EAF2FA]/30 rounded-full flex items-center justify-center hover:text-[#FFB800] hover:border-[#FFB800] transition-colors">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" aria-label="YouTube" className="w-9 h-9 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center hover:text-[#FFB800] hover:border-[#FFB800] transition-colors">
+              <a href="#" aria-label="YouTube" className="w-9 h-9 bg-[#123A63] border border-[#EAF2FA]/30 rounded-full flex items-center justify-center hover:text-[#FFB800] hover:border-[#FFB800] transition-colors">
                 <Youtube className="w-4 h-4" />
               </a>
             </div>
