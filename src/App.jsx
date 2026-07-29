@@ -69,14 +69,140 @@ function ParticleBackground() {
   return <div id="particles-container" />;
 }
 
+const TIMELINE_DATA = {
+  1: [
+    {
+      time: "09:00 AM – 10:00 AM",
+      title: "Participant Registration & Kit Distribution",
+      desc: "Check-in, identity verification, and allocation of team workspaces and hackathon kits.",
+      badge: "CHECK-IN",
+      IconComponent: Users,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
+    },
+    {
+      time: "10:00 AM – 11:00 AM",
+      title: "Inauguration Ceremony & Guest Keynote",
+      desc: "Opening remarks by St. Peter's Engineering leadership and industry partner addresses.",
+      badge: "CEREMONY",
+      IconComponent: Sparkles,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
+    },
+    {
+      time: "11:00 AM – 01:30 PM",
+      title: "Level 1 — Code Sprint",
+      desc: "Timed coding competition testing algorithm efficiency and test-case resolution.",
+      badge: "LEVEL 1 SPRINT",
+      IconComponent: Code2,
+      highlightType: "gold",
+      badgeStyle: "bg-[#091C33] border border-[#FFB800] text-[#FFB800] font-bold"
+    },
+    {
+      time: "01:30 PM – 02:30 PM",
+      title: "Lunch Break & Networking",
+      desc: "Complimentary buffet lunch provided for all registered participants.",
+      badge: "MEAL BREAK",
+      IconComponent: Coffee,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
+    },
+    {
+      time: "02:30 PM – 06:30 PM",
+      title: "Level 2 — Innovate",
+      desc: "Teams formulate architectural frameworks for industry problem statements.",
+      badge: "LEVEL 2 DESIGN",
+      IconComponent: Brain,
+      highlightType: "gold",
+      badgeStyle: "bg-[#091C33] border border-[#FFB800] text-[#FFB800] font-bold"
+    },
+    {
+      time: "06:30 PM – 07:30 PM",
+      title: "Presentation of Innovative Solutions",
+      desc: "Pitching Level 2 designs for shortlist evaluation into Level 3.",
+      badge: "EVALUATION",
+      IconComponent: Layers,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
+    },
+    {
+      time: "07:30 PM – 08:30 PM",
+      title: "Dinner & DJ Engagement Session",
+      desc: "Dinner break and high-energy music session to recharge participants for the night sprint.",
+      badge: "MEAL & MUSIC",
+      IconComponent: Music,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#E8483C]/50 text-[#E8483C]"
+    },
+    {
+      time: "08:30 PM Onwards",
+      title: "Level 3 — BuildX Begins (Overnight Prototype Build)",
+      desc: "Shortlisted teams start building working models and software prototypes.",
+      badge: "LEVEL 3 BUILD",
+      IconComponent: Rocket,
+      highlightType: "red",
+      badgeStyle: "bg-[#E8483C] text-white font-bold"
+    }
+  ],
+  2: [
+    {
+      time: "01:00 AM",
+      title: "Late-Night Coffee Break & Music",
+      desc: "Fresh brewed coffee served continuously at hackathon workstations.",
+      badge: "MIDNIGHT RECHARGE",
+      IconComponent: Coffee,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#FFB800]/50 text-[#FFB800]"
+    },
+    {
+      time: "05:30 AM",
+      title: "Wake-Up Music & Morning Coffee Break",
+      desc: "Energizing track list and morning coffee station open.",
+      badge: "MORNING RECHARGE",
+      IconComponent: Music,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#FFB800]/50 text-[#FFB800]"
+    },
+    {
+      time: "07:30 AM – 08:00 AM",
+      title: "Fresh-Up Time & Breakfast",
+      desc: "Fresh-up facilities available followed by hot breakfast for all teams.",
+      badge: "BREAKFAST",
+      IconComponent: Coffee,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
+    },
+    {
+      time: "08:00 AM – 10:00 AM",
+      title: "Final Project Submission & Jury Demonstrations",
+      desc: "Repositories frozen; teams present live working prototypes to industry judges.",
+      badge: "JURY DEMO",
+      IconComponent: Terminal,
+      highlightType: "gold",
+      badgeStyle: "bg-[#091C33] border border-[#FFB800] text-[#FFB800] font-bold"
+    },
+    {
+      time: "10:00 AM – 11:00 AM",
+      title: "Valedictory Ceremony & Prize Distribution",
+      desc: "Announcement of ₹1,00,000 cash winners, internship offers, and closing address.",
+      badge: "VALEDICTORY",
+      IconComponent: Trophy,
+      highlightType: "red",
+      badgeStyle: "bg-[#E8483C] text-white font-bold"
+    }
+  ]
+};
+
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTimelineDay, setActiveTimelineDay] = useState(1);
+  const [selectedStageIndex, setSelectedStageIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
   };
+
 
   return (
     <div className="bg-blueprint-grid min-h-screen text-[#9FB8D4] selection:bg-[#FFB800] selection:text-[#0E2A4A] relative">
@@ -163,100 +289,105 @@ export default function App() {
           </div>
         )}
       </header>
-
       {/* 2. HERO SECTION */}
       <section className="relative pt-12 md:pt-16 pb-16 md:pb-24 border-b border-[#EAF2FA]/20 overflow-hidden">
         <div className="container relative z-10">
           
-          <div className="flex flex-col items-center text-center mx-auto mb-16">
-            {/* Presents Line */}
-            <div className="text-xs sm:text-sm font-mono text-[#FFB800] uppercase tracking-[0.25em] mb-3 select-none">
-              SPEC-IIC PRESENTS
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+            {/* Status Chip */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-[#123A63] border border-[#EAF2FA]/30 text-[10px] sm:text-xs font-mono text-[#FFFFFF]">
+              <span className="w-2 h-2 rounded-none bg-[#E8483C]"></span>
+              <span className="tracking-wider uppercase">NATIONAL-LEVEL 24-HOUR COLLEGE HACKATHON</span>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white font-display tracking-wider leading-[1.08] max-w-5xl mb-6">
-              SPEC INDUSTRY HACK <span className="text-[#FFB800]">2026</span>
-            </h1>
-
-            {/* Tagline */}
-            <p className="text-xl sm:text-2xl font-display font-bold text-[#FFFFFF] max-w-3xl mb-4 tracking-wide">
-              &ldquo;Industry Challenges, Innovative Solutions, Incredible Impact.&rdquo;
-            </p>
-
-            {/* Organizer Attribution */}
-            <p className="text-base text-[#9FB8D4] max-w-3xl mb-10 leading-relaxed">
-              Organized by <strong className="text-white font-semibold">St. Peter&apos;s Engineering College</strong>, in collaboration with <strong className="text-[#FFB800]">GeeksforGeeks Student Chapter</strong> &amp; <strong className="text-[#E8483C]">Spectrum Circle</strong>.
-            </p>
-
-            {/* Event Dates & Venue Card Strip */}
-            <div className="flex flex-wrap items-center justify-center gap-4 mb-10 text-xs font-mono">
-              <div className="flex items-center gap-2.5 px-4 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none text-[#FFFFFF]">
-                <Calendar className="w-4 h-4 text-[#E8483C]" />
-                <span>1st–2nd August 2026</span>
-              </div>
-              <div className="flex items-center gap-2.5 px-4 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none text-[#FFFFFF]">
-                <MapPin className="w-4 h-4 text-[#FFB800]" />
-                <span>St. Peter&apos;s Engineering College Campus</span>
-              </div>
+            {/* Industrial Rubber Stamp Device */}
+            <div className="rubber-stamp hidden sm:inline-block">
+              INDUSTRY APPROVED // SPEC-2026
             </div>
+          </div>
 
-            {/* Dual CTAs */}
-            <div className="flex flex-wrap items-center justify-center gap-6">
-              <a
-                href={FORM_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-illuminated btn-illuminated-lg"
-              >
-                <span>Register Now</span>
-                <ArrowUpRight className="w-5 h-5" />
-              </a>
-              <a href="#themes" className="btn-ghost btn-ghost-lg">
-                <span>Explore Themes</span>
-                <ChevronRight className="w-5 h-5 text-[#9FB8D4]" />
-              </a>
+          {/* Headline */}
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white font-display tracking-wider leading-[1.08] max-w-5xl mb-6">
+            SPEC INDUSTRY HACK <span className="text-[#FFB800]">2026</span>
+          </h1>
+
+          {/* Tagline */}
+          <p className="text-lg sm:text-2xl font-display font-bold text-[#FFFFFF] max-w-3xl mb-4 tracking-wide">
+            &ldquo;Industry Challenges, Innovative Solutions, Incredible Impact.&rdquo;
+          </p>
+
+          {/* Organizer Attribution */}
+          <p className="text-sm sm:text-base text-[#9FB8D4] max-w-3xl mb-10 leading-relaxed">
+            Organized by <strong className="text-white font-semibold">St. Peter&apos;s Engineering College</strong>, in collaboration with <strong className="text-[#FFB800]">GeeksforGeeks Student Chapter</strong> &amp; <strong className="text-[#E8483C]">Spectrum Circle</strong>.
+          </p>
+
+          {/* Event Dates & Venue Card Strip */}
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-10 text-xs font-mono">
+            <div className="flex items-center gap-2.5 px-4 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none text-[#FFFFFF]">
+              <Calendar className="w-4 h-4 text-[#E8483C]" />
+              <span>1st–2nd August 2026</span>
             </div>
+            <div className="flex items-center gap-2.5 px-4 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none text-[#FFFFFF]">
+              <MapPin className="w-4 h-4 text-[#FFB800]" />
+              <span>St. Peter&apos;s Engineering College Campus</span>
+            </div>
+          </div>
+
+          {/* Dual CTAs */}
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-16">
+            <a
+              href={FORM_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-illuminated btn-illuminated-lg"
+            >
+              <span>Register Now</span>
+              <ArrowUpRight className="w-5 h-5" />
+            </a>
+            <a href="#themes" className="btn-ghost btn-ghost-lg">
+              <span>Explore Themes</span>
+              <ChevronRight className="w-5 h-5 text-[#9FB8D4]" />
+            </a>
           </div>
 
           {/* Blueprint Key Stats Bar with Dimension Lines */}
           <div className="pt-8 border-t border-[#EAF2FA]/20">
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none relative">
-                <div className="text-2xl sm:text-3xl font-extrabold font-display text-white">24+</div>
-                <div className="text-xs font-mono text-[#9FB8D4] mt-1">Hours Non-Stop</div>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4">
+              <div className="p-3.5 sm:p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none relative">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-display text-white truncate">24+</div>
+                <div className="text-[11px] sm:text-xs font-mono text-[#9FB8D4] mt-1">Hours Non-Stop</div>
                 <div className="mt-3 pt-2 border-t border-[#EAF2FA]/20 text-[10px] font-mono text-[#6B8BAE]">
                   ◄── DURATION ──►
                 </div>
               </div>
 
-              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none relative">
-                <div className="text-2xl sm:text-3xl font-extrabold font-display text-[#FFB800]">1000+</div>
-                <div className="text-xs font-mono text-[#9FB8D4] mt-1">Participants</div>
+              <div className="p-3.5 sm:p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none relative">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-display text-[#FFB800] truncate">1000+</div>
+                <div className="text-[11px] sm:text-xs font-mono text-[#9FB8D4] mt-1">Participants</div>
                 <div className="mt-3 pt-2 border-t border-[#EAF2FA]/20 text-[10px] font-mono text-[#6B8BAE]">
                   ◄── CAPACITY ──►
                 </div>
               </div>
 
-              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none relative">
-                <div className="text-2xl sm:text-3xl font-extrabold font-display text-white">200</div>
-                <div className="text-xs font-mono text-[#9FB8D4] mt-1">Innovator Teams</div>
+              <div className="p-3.5 sm:p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none relative">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-display text-white truncate">200</div>
+                <div className="text-[11px] sm:text-xs font-mono text-[#9FB8D4] mt-1">Innovator Teams</div>
                 <div className="mt-3 pt-2 border-t border-[#EAF2FA]/20 text-[10px] font-mono text-[#6B8BAE]">
                   ◄── SQUADS ──►
                 </div>
               </div>
 
-              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none relative">
-                <div className="text-2xl sm:text-3xl font-extrabold font-display text-[#FFB800]">₹1,00,000</div>
-                <div className="text-xs font-mono text-[#9FB8D4] mt-1">Prize Pool</div>
+              <div className="p-3.5 sm:p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none relative">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-display text-[#FFB800] truncate">₹1,00,000</div>
+                <div className="text-[11px] sm:text-xs font-mono text-[#9FB8D4] mt-1">Prize Pool</div>
                 <div className="mt-3 pt-2 border-t border-[#EAF2FA]/20 text-[10px] font-mono text-[#6B8BAE]">
                   ◄── REWARDS ──►
                 </div>
               </div>
 
-              <div className="col-span-2 md:col-span-1 p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none relative">
-                <div className="text-2xl sm:text-3xl font-extrabold font-display text-white">15</div>
-                <div className="text-xs font-mono text-[#9FB8D4] mt-1">Industry Partners</div>
+              <div className="col-span-2 md:col-span-1 p-3.5 sm:p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none relative">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-display text-white truncate">15</div>
+                <div className="text-[11px] sm:text-xs font-mono text-[#9FB8D4] mt-1">Industry Partners</div>
                 <div className="mt-3 pt-2 border-t border-[#EAF2FA]/20 text-[10px] font-mono text-[#6B8BAE]">
                   ◄── SPONSORS ──►
                 </div>
@@ -576,168 +707,211 @@ export default function App() {
         </div>
       </section>
 
-      {/* 7. EVENT TIMELINE */}
-      <section id="timeline" className="py-20 border-b border-[#EAF2FA]/20">
-        <div className="container">
+      {/* 7. EVENT TIMELINE — SEQUENTIAL ROADMAP */}
+      <section id="timeline" className="py-20 border-b border-[#EAF2FA]/20 relative overflow-hidden">
+        <div className="container relative z-10">
           
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="section-title">Event Timeline</h2>
-            <p className="section-subtitle mx-auto">
-              Detailed hour-by-hour operational breakdown across August 1st and August 2nd, 2026.
-            </p>
-          </div>
+          {(() => {
+            const currentEvents = TIMELINE_DATA[activeTimelineDay] || [];
+            const safeIdx = Math.min(selectedStageIndex, currentEvents.length - 1);
+            const activeEvent = currentEvents[safeIdx] || currentEvents[0];
+            const ActiveIcon = activeEvent.IconComponent || Clock;
 
-          <div className="flex justify-center gap-4 mb-12 font-mono">
-            <button
-              onClick={() => setActiveTimelineDay(1)}
-              className={`px-6 py-3 rounded-none border text-xs font-bold tracking-widest transition-colors cursor-pointer ${
-                activeTimelineDay === 1
-                  ? 'bg-[#123A63] text-[#FFB800] border-[#FFB800]'
-                  : 'bg-[#091C33] text-[#9FB8D4] border-[#EAF2FA]/30 hover:text-white'
-              }`}
-            >
-              DAY 1 — 1st AUGUST 2026
-            </button>
-            <button
-              onClick={() => setActiveTimelineDay(2)}
-              className={`px-6 py-3 rounded-none border text-xs font-bold tracking-widest transition-colors cursor-pointer ${
-                activeTimelineDay === 2
-                  ? 'bg-[#123A63] text-[#FFB800] border-[#FFB800]'
-                  : 'bg-[#091C33] text-[#9FB8D4] border-[#EAF2FA]/30 hover:text-white'
-              }`}
-            >
-              DAY 2 — 2nd AUGUST 2026
-            </button>
-          </div>
-
-          <div className="max-w-4xl mx-auto space-y-4">
-            
-            {activeTimelineDay === 1 && (
+            return (
               <>
-                <div className="p-4 sm:p-5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="font-mono text-xs text-[#E8483C] font-bold w-44 shrink-0">09:00 AM – 10:00 AM</div>
-                  <div className="flex-1">
-                    <h4 className="text-base font-bold font-display text-white">Participant Registration &amp; Kit Distribution</h4>
-                    <p className="text-xs text-[#9FB8D4] mt-0.5">Check-in, identity verification, and allocation of team workspaces and hackathon kits.</p>
+                <div className="text-center max-w-3xl mx-auto mb-10">
+                  <div className="section-tag mx-auto">
+                    <Clock className="w-3.5 h-3.5" />
+                    <span>24-Hour Interactive Timeline</span>
                   </div>
-                  <span className="text-[10px] font-mono px-2.5 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4] rounded-none shrink-0 self-start sm:self-auto">CHECK-IN</span>
+                  <h2 className="section-title">Event Timeline</h2>
+                  <p className="section-subtitle mx-auto">
+                    Explore the complete 24-hour roadmap across August 1st and August 2nd, 2026. Hover or click any stage node to view full details.
+                  </p>
                 </div>
 
-                <div className="p-4 sm:p-5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="font-mono text-xs text-[#E8483C] font-bold w-44 shrink-0">10:00 AM – 11:00 AM</div>
-                  <div className="flex-1">
-                    <h4 className="text-base font-bold font-display text-white">Inauguration Ceremony &amp; Guest Keynote</h4>
-                    <p className="text-xs text-[#9FB8D4] mt-0.5">Opening remarks by St. Peter&apos;s Engineering leadership and industry partner addresses.</p>
-                  </div>
-                  <span className="text-[10px] font-mono px-2.5 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4] rounded-none shrink-0 self-start sm:self-auto">CEREMONY</span>
+                {/* Day Switcher Toolbar */}
+                <div className="flex items-center justify-center gap-3 sm:gap-6 mb-10 font-mono text-xs max-w-4xl mx-auto">
+                  <button
+                    onClick={() => {
+                      setActiveTimelineDay(1);
+                      setSelectedStageIndex(0);
+                    }}
+                    className={`px-6 sm:px-8 py-3 border font-bold transition-all cursor-pointer flex items-center gap-3 ${
+                      activeTimelineDay === 1
+                        ? 'bg-[#123A63] text-[#FFB800] border-[#FFB800] shadow-[0_0_16px_rgba(255,184,0,0.3)] -translate-y-0.5'
+                        : 'bg-[#091C33] text-[#9FB8D4] border-[#EAF2FA]/20 hover:border-[#FFB800]/50 hover:text-white'
+                    }`}
+                  >
+                    <Calendar className="w-4 h-4" />
+                    <span>DAY 1 — 1ST AUG (8 STAGES)</span>
+                  </button>
+
+                  <button
+                    onClick={() => {
+                      setActiveTimelineDay(2);
+                      setSelectedStageIndex(0);
+                    }}
+                    className={`px-6 sm:px-8 py-3 border font-bold transition-all cursor-pointer flex items-center gap-3 ${
+                      activeTimelineDay === 2
+                        ? 'bg-[#123A63] text-[#FFB800] border-[#FFB800] shadow-[0_0_16px_rgba(255,184,0,0.3)] -translate-y-0.5'
+                        : 'bg-[#091C33] text-[#9FB8D4] border-[#EAF2FA]/20 hover:border-[#FFB800]/50 hover:text-white'
+                    }`}
+                  >
+                    <Calendar className="w-4 h-4" />
+                    <span>DAY 2 — 2ND AUG (5 STAGES)</span>
+                  </button>
                 </div>
 
-                <div className="p-4 sm:p-5 bg-[#123A63] border border-[#FFB800]/50 rounded-none flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="font-mono text-xs text-[#FFB800] font-bold w-44 shrink-0">11:00 AM – 01:30 PM</div>
-                  <div className="flex-1">
-                    <h4 className="text-base font-bold font-display text-white">Level 1 — Code Sprint</h4>
-                    <p className="text-xs text-[#9FB8D4] mt-0.5">Timed coding competition testing algorithm efficiency and test-case resolution.</p>
-                  </div>
-                  <span className="text-[10px] font-mono px-2.5 py-1 bg-[#091C33] border border-[#FFB800] text-[#FFB800] rounded-none shrink-0 self-start sm:self-auto font-bold">LEVEL 1 SPRINT</span>
-                </div>
+                {/* CONNECTED ROADMAP TRACK */}
+                <div className="max-w-4xl mx-auto space-y-6">
+                  <div className="bg-[#123A63] border-2 border-[#EAF2FA]/30 p-5 sm:p-8 relative">
+                    <div className="flex items-center justify-between mb-6 font-mono text-xs border-b border-[#EAF2FA]/15 pb-3">
+                      <div className="flex items-center gap-2 text-[#FFB800] font-bold uppercase tracking-wider">
+                        <Zap className="w-4 h-4 text-[#FFB800]" />
+                        <span>SEQUENTIAL ROADMAP — DAY {activeTimelineDay}</span>
+                      </div>
+                      <div className="text-[#6B8BAE] hidden sm:block">
+                        HOVER / CLICK NODES TO INSPECT
+                      </div>
+                    </div>
 
-                <div className="p-4 sm:p-5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="font-mono text-xs text-[#9FB8D4] font-bold w-44 shrink-0">01:30 PM – 02:30 PM</div>
-                  <div className="flex-1">
-                    <h4 className="text-base font-bold font-display text-white">Lunch Break &amp; Networking</h4>
-                    <p className="text-xs text-[#9FB8D4] mt-0.5">Complimentary buffet lunch provided for all registered participants.</p>
-                  </div>
-                  <span className="text-[10px] font-mono px-2.5 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4] rounded-none shrink-0 self-start sm:self-auto">MEAL BREAK</span>
-                </div>
+                    {/* Connected Stem Line & Scrollable Track */}
+                    <div className="relative my-4 px-1 sm:px-4 overflow-x-auto scrollbar-none pb-4">
+                      <div className="min-w-[620px] sm:min-w-0 relative py-2">
+                        <div className="absolute top-1/2 left-4 right-4 h-1 -translate-y-1/2 timeline-horiz-stem rounded-full overflow-hidden z-0">
+                          <div className="timeline-horiz-beam" />
+                        </div>
 
-                <div className="p-4 sm:p-5 bg-[#123A63] border border-[#FFB800]/50 rounded-none flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="font-mono text-xs text-[#FFB800] font-bold w-44 shrink-0">02:30 PM – 06:30 PM</div>
-                  <div className="flex-1">
-                    <h4 className="text-base font-bold font-display text-white">Level 2 — Innovate</h4>
-                    <p className="text-xs text-[#9FB8D4] mt-0.5">Teams formulate architectural frameworks for industry problem statements.</p>
-                  </div>
-                  <span className="text-[10px] font-mono px-2.5 py-1 bg-[#091C33] border border-[#FFB800] text-[#FFB800] rounded-none shrink-0 self-start sm:self-auto font-bold">LEVEL 2 DESIGN</span>
-                </div>
+                        <div className="relative z-10 flex items-center justify-between gap-1 sm:gap-2">
+                          {currentEvents.map((ev, idx) => {
+                            const isSelected = safeIdx === idx;
+                            const isPassed = idx <= safeIdx;
+                            const isRed = ev.highlightType === 'red';
+                            const IconComp = ev.IconComponent || Clock;
 
-                <div className="p-4 sm:p-5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="font-mono text-xs text-[#E8483C] font-bold w-44 shrink-0">06:30 PM – 07:30 PM</div>
-                  <div className="flex-1">
-                    <h4 className="text-base font-bold font-display text-white">Presentation of Innovative Solutions</h4>
-                    <p className="text-xs text-[#9FB8D4] mt-0.5">Pitching Level 2 designs for shortlist evaluation into Level 3.</p>
-                  </div>
-                  <span className="text-[10px] font-mono px-2.5 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4] rounded-none shrink-0 self-start sm:self-auto">EVALUATION</span>
-                </div>
+                            return (
+                              <button
+                                key={idx}
+                                onClick={() => setSelectedStageIndex(idx)}
+                                onMouseEnter={() => setSelectedStageIndex(idx)}
+                                className="group relative flex flex-col items-center shrink-0 cursor-pointer min-w-[72px] sm:min-w-[95px] focus:outline-none"
+                              >
+                                <span className={`font-mono text-[10px] sm:text-[11px] font-bold mb-2 transition-colors ${
+                                  isSelected
+                                    ? isRed
+                                      ? 'text-[#E8483C]'
+                                      : 'text-[#FFB800]'
+                                    : isPassed
+                                    ? 'text-white'
+                                    : 'text-[#6B8BAE]'
+                                }`}>
+                                  {ev.time.split('–')[0].trim()}
+                                </span>
 
-                <div className="p-4 sm:p-5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="font-mono text-xs text-[#9FB8D4] font-bold w-44 shrink-0">07:30 PM – 08:30 PM</div>
-                  <div className="flex-1">
-                    <h4 className="text-base font-bold font-display text-white">Dinner &amp; DJ Engagement Session</h4>
-                    <p className="text-xs text-[#9FB8D4] mt-0.5">Dinner break and high-energy music session to recharge participants for the night sprint.</p>
-                  </div>
-                  <span className="text-[10px] font-mono px-2.5 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#E8483C] rounded-none shrink-0 self-start sm:self-auto">MEAL &amp; MUSIC</span>
-                </div>
+                                <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-none border-2 flex items-center justify-center transition-all duration-300 ${
+                                  isSelected
+                                    ? isRed
+                                      ? 'bg-[#E8483C] border-white text-white shadow-[0_0_18px_rgba(232,72,60,0.7)] scale-110'
+                                      : 'bg-[#123A63] border-[#FFB800] text-[#FFB800] shadow-[0_0_20px_rgba(255,184,0,0.5)] scale-110'
+                                    : isPassed
+                                    ? 'bg-[#091C33] border-[#FFB800]/60 text-[#FFB800] group-hover:border-[#FFB800] group-hover:scale-105'
+                                    : 'bg-[#091C33] border-[#EAF2FA]/25 text-[#6B8BAE] group-hover:border-[#FFB800]/60 group-hover:text-white group-hover:scale-105'
+                                }`}>
+                                  <IconComp className="w-4 h-4" />
+                                </div>
 
-                <div className="p-4 sm:p-5 bg-[#123A63] border-2 border-[#E8483C] rounded-none flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="font-mono text-xs text-[#E8483C] font-bold w-44 shrink-0">08:30 PM Onwards</div>
-                  <div className="flex-1">
-                    <h4 className="text-base font-bold font-display text-white">Level 3 — BuildX Begins (Overnight Prototype Build)</h4>
-                    <p className="text-xs text-[#9FB8D4] mt-0.5">Shortlisted teams start building working models and software prototypes.</p>
+                                <span className={`font-mono text-[8px] sm:text-[9px] mt-2 px-1.5 py-0.5 border truncate max-w-[80px] sm:max-w-[95px] text-center uppercase tracking-tighter ${
+                                  isSelected
+                                    ? 'bg-[#091C33] border-[#FFB800] text-[#FFB800] font-bold'
+                                    : 'bg-[#091C33]/60 border-transparent text-[#6B8BAE]'
+                                }`}>
+                                  {ev.badge}
+                                </span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <span className="text-[10px] font-mono px-2.5 py-1 bg-[#E8483C] text-white font-bold rounded-none shrink-0 self-start sm:self-auto">LEVEL 3 BUILD</span>
+
+                  {/* SPOTLIGHT STAGE CARD */}
+                  <div
+                    key={`spotlight-flow-${activeTimelineDay}-${safeIdx}`}
+                    className={`p-6 sm:p-8 bg-[#091C33] border-2 rounded-none volume-spotlight-anim relative ${
+                      activeEvent.highlightType === 'red'
+                        ? 'border-[#E8483C] shadow-[0_0_30px_rgba(232,72,60,0.3)]'
+                        : activeEvent.highlightType === 'gold'
+                        ? 'border-[#FFB800] shadow-[0_0_30px_rgba(255,184,0,0.25)]'
+                        : 'border-[#EAF2FA]/40'
+                    }`}
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-4 mb-4 font-mono text-xs border-b border-[#EAF2FA]/15 pb-4">
+                      <div className="flex items-center gap-3">
+                        <span className="px-2.5 py-1 bg-[#123A63] border border-[#FFB800] text-[#FFB800] font-bold">
+                          STAGE {String(safeIdx + 1).padStart(2, '0')} / {String(currentEvents.length).padStart(2, '0')}
+                        </span>
+                        <div className="flex items-center gap-2 text-white font-bold">
+                          <Clock className="w-4 h-4 text-[#FFB800]" />
+                          <span>{activeEvent.time}</span>
+                        </div>
+                      </div>
+
+                      <span className={`px-3 py-1 text-[11px] font-bold uppercase tracking-wider ${activeEvent.badgeStyle}`}>
+                        {activeEvent.badge}
+                      </span>
+                    </div>
+
+                    <div className="flex items-start gap-4 mb-6">
+                      <div className={`p-3.5 border shrink-0 hidden sm:flex items-center justify-center ${
+                        activeEvent.highlightType === 'red'
+                          ? 'bg-[#E8483C] text-white border-white shadow-[0_0_15px_rgba(232,72,60,0.5)]'
+                          : activeEvent.highlightType === 'gold'
+                          ? 'bg-[#123A63] text-[#FFB800] border-[#FFB800] shadow-[0_0_15px_rgba(255,184,0,0.3)]'
+                          : 'bg-[#123A63] text-[#9FB8D4] border-[#EAF2FA]/30'
+                      }`}>
+                        <ActiveIcon className="w-7 h-7" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl sm:text-2xl font-bold font-display text-white">
+                          {activeEvent.title}
+                        </h3>
+                        <p className="text-sm text-[#9FB8D4] mt-2 leading-relaxed">
+                          {activeEvent.desc}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between pt-4 border-t border-[#EAF2FA]/15 font-mono text-xs">
+                      <button
+                        onClick={() => setSelectedStageIndex((prev) => (prev > 0 ? prev - 1 : currentEvents.length - 1))}
+                        className="px-4 py-2 bg-[#123A63] border border-[#EAF2FA]/30 text-[#9FB8D4] hover:text-white hover:border-[#FFB800] transition-colors cursor-pointer flex items-center gap-2"
+                      >
+                        <ChevronDown className="w-4 h-4 rotate-90" />
+                        <span>PREV STAGE</span>
+                      </button>
+
+                      <div className="flex-1 mx-4 max-w-xs hidden sm:block bg-[#0E2A4A] h-2 border border-[#EAF2FA]/20 overflow-hidden">
+                        <div
+                          className="bg-[#FFB800] h-full transition-all duration-300 shadow-[0_0_8px_#FFB800]"
+                          style={{ width: `${((safeIdx + 1) / currentEvents.length) * 100}%` }}
+                        />
+                      </div>
+
+                      <button
+                        onClick={() => setSelectedStageIndex((prev) => (prev < currentEvents.length - 1 ? prev + 1 : 0))}
+                        className="px-4 py-2 bg-[#123A63] border border-[#EAF2FA]/30 text-[#9FB8D4] hover:text-white hover:border-[#FFB800] transition-colors cursor-pointer flex items-center gap-2"
+                      >
+                        <span>NEXT STAGE</span>
+                        <ChevronDown className="w-4 h-4 -rotate-90" />
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </>
-            )}
-
-            {activeTimelineDay === 2 && (
-              <>
-                <div className="p-4 sm:p-5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="font-mono text-xs text-[#FFB800] font-bold w-44 shrink-0">01:00 AM</div>
-                  <div className="flex-1">
-                    <h4 className="text-base font-bold font-display text-white">Late-Night Coffee Break &amp; Music</h4>
-                    <p className="text-xs text-[#9FB8D4] mt-0.5">Fresh brewed coffee served continuously at hackathon workstations.</p>
-                  </div>
-                  <span className="text-[10px] font-mono px-2.5 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#FFB800] rounded-none shrink-0 self-start sm:self-auto">MIDNIGHT RECHARGE</span>
-                </div>
-
-                <div className="p-4 sm:p-5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="font-mono text-xs text-[#FFB800] font-bold w-44 shrink-0">05:30 AM</div>
-                  <div className="flex-1">
-                    <h4 className="text-base font-bold font-display text-white">Wake-Up Music &amp; Morning Coffee Break</h4>
-                    <p className="text-xs text-[#9FB8D4] mt-0.5">Energizing track list and morning coffee station open.</p>
-                  </div>
-                  <span className="text-[10px] font-mono px-2.5 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#FFB800] rounded-none shrink-0 self-start sm:self-auto">MORNING RECHARGE</span>
-                </div>
-
-                <div className="p-4 sm:p-5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="font-mono text-xs text-[#9FB8D4] font-bold w-44 shrink-0">07:30 AM – 08:00 AM</div>
-                  <div className="flex-1">
-                    <h4 className="text-base font-bold font-display text-white">Fresh-Up Time &amp; Breakfast</h4>
-                    <p className="text-xs text-[#9FB8D4] mt-0.5">Fresh-up facilities available followed by hot breakfast for all teams.</p>
-                  </div>
-                  <span className="text-[10px] font-mono px-2.5 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4] rounded-none shrink-0 self-start sm:self-auto">BREAKFAST</span>
-                </div>
-
-                <div className="p-4 sm:p-5 bg-[#123A63] border border-[#FFB800]/50 rounded-none flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="font-mono text-xs text-[#FFB800] font-bold w-44 shrink-0">08:00 AM – 10:00 AM</div>
-                  <div className="flex-1">
-                    <h4 className="text-base font-bold font-display text-white">Final Project Submission &amp; Jury Demonstrations</h4>
-                    <p className="text-xs text-[#9FB8D4] mt-0.5">Repositories frozen; teams present live working prototypes to industry judges.</p>
-                  </div>
-                  <span className="text-[10px] font-mono px-2.5 py-1 bg-[#091C33] border border-[#FFB800] text-[#FFB800] rounded-none shrink-0 self-start sm:self-auto font-bold">JURY DEMO</span>
-                </div>
-
-                <div className="p-4 sm:p-5 bg-[#123A63] border-2 border-[#E8483C] rounded-none flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="font-mono text-xs text-[#E8483C] font-bold w-44 shrink-0">10:00 AM – 11:00 AM</div>
-                  <div className="flex-1">
-                    <h4 className="text-base font-bold font-display text-white">Valedictory Ceremony &amp; Prize Distribution</h4>
-                    <p className="text-xs text-[#9FB8D4] mt-0.5">Announcement of ₹1,00,000 cash winners, internship offers, and closing address.</p>
-                  </div>
-                  <span className="text-[10px] font-mono px-2.5 py-1 bg-[#E8483C] text-white font-bold rounded-none shrink-0 self-start sm:self-auto">VALEDICTORY</span>
-                </div>
-              </>
-            )}
-
-          </div>
+            );
+          })()}
 
         </div>
       </section>
@@ -828,20 +1002,26 @@ export default function App() {
           </div>
 
           {/* Primary Reward: 100K Cash Prize (Industrial Blueprint Highlighted Card) */}
-          <div className="bg-[#123A63] border-2 border-[#FFB800] p-8 md:p-12 mb-12 relative overflow-hidden">
-
-            <div className="text-left max-w-3xl">
-              <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#091C33] border border-[#FFB800] text-xs font-mono text-[#FFB800] uppercase tracking-widest mb-6">
+          <div className="bg-[#123A63] border-2 border-[#FFB800] p-6 sm:p-8 md:p-12 mb-12 relative overflow-hidden">
+            {/* Stamp & Official Tag Flex Container */}
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#091C33] border border-[#FFB800] text-xs font-mono text-[#FFB800] uppercase tracking-widest">
                 <Award className="w-3.5 h-3.5 text-[#FFB800]" />
                 <span>OFFICIAL CASH PRIZE</span>
               </span>
-              
+
+              <span className="rubber-stamp border-[#E8483C] text-[#E8483C] text-[10px] py-1 px-2.5">
+                PRIMARY REWARD // APPROVED
+              </span>
+            </div>
+
+            <div className="text-left max-w-3xl">
               <h3 className="text-xs font-mono text-[#9FB8D4] mb-2 tracking-widest uppercase">
                 [SPEC-REWARD-01] CASH DISTRIBUTION
               </h3>
               
               {/* Huge cash display with blueprint dimension styling */}
-              <div className="text-5xl sm:text-7xl font-extrabold font-display text-white mb-4 tracking-tight">
+              <div className="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-display text-white mb-4 tracking-tight truncate">
                 ₹1,00,000
               </div>
 
