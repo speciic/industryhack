@@ -210,7 +210,7 @@ export default function App() {
       <ParticleBackground />
 
       {/* 1. FLOATING FIXED GLASSMORPHISM NAV BAR */}
-      <header className="fixed top-3 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1240px] nav-glassmorphism rounded-full transition-all duration-300">
+      <header className="fixed top-6 sm:top-7 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1240px] nav-glassmorphism rounded-full transition-all duration-300">
         <div className="px-6 sm:px-8 flex items-center h-12 md:h-14">
           
           {/* Logo Mark (Left aligned) */}
@@ -245,10 +245,10 @@ export default function App() {
                 href={FORM_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-illuminated py-1.5 px-4 text-[10px] tracking-wider rounded-full"
+                className="btn-nav-cta"
               >
                 <span>Register Now</span>
-                <ArrowUpRight className="w-3 h-3" />
+                <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>
 
@@ -290,7 +290,7 @@ export default function App() {
       </header>
 
       {/* 2. HERO SECTION */}
-      <section className="relative pt-12 md:pt-16 pb-16 md:pb-24 border-b border-[#EAF2FA]/20 overflow-hidden">
+      <section className="relative pt-32 sm:pt-36 pb-16 md:pb-24 border-b border-[#EAF2FA]/20 overflow-hidden">
         <div className="container relative z-10">
           
 
@@ -479,7 +479,14 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="section-tag mx-auto">
+              <Layers className="w-3.5 h-3.5" />
+              <span>Track Domains</span>
+            </div>
             <h2 className="section-title">Themes</h2>
+            <p className="section-subtitle mx-auto">
+              Explore the core technical tracks designed around active industry friction points and emerging AI frontiers.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -914,6 +921,10 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="section-tag mx-auto">
+              <Zap className="w-3.5 h-3.5" />
+              <span>Participant Experience</span>
+            </div>
             <h2 className="section-title">Facilities Provided</h2>
             <p className="section-subtitle mx-auto">
               We ensure all infrastructure and dietary needs are taken care of so teams can remain focused on building.
@@ -988,6 +999,10 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="section-tag mx-auto">
+              <Trophy className="w-3.5 h-3.5" />
+              <span>Rewards &amp; Impact</span>
+            </div>
             <h2 className="section-title">Prizes &amp; Opportunities</h2>
             <p className="section-subtitle mx-auto">
               Substantial financial rewards, API credits, and direct career acceleration pathways for top teams.

@@ -167,6 +167,36 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.05rem;
 }
 
+/* Dedicated Navbar CTA button (Pill-shaped, zero overflow inside floating header) */
+.btn-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background-color: var(--accent-signal);
+  color: var(--bg-blueprint) !important;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.45rem 1.15rem;
+  border-radius: 9999px;
+  border: 1.5px solid var(--accent-signal);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(255, 184, 0, 0.45);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn-nav-cta:hover {
+  background-color: #FFCA28;
+  box-shadow: 0 0 18px rgba(255, 184, 0, 0.75);
+  transform: translateY(-1px);
+}
+
 @keyframes signalBlink {
   0%, 100% {
     box-shadow: 0 0 0 3px var(--bg-blueprint), 0 0 0 5px var(--line-white);
