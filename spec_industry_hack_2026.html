@@ -362,13 +362,6 @@
         animation-duration: 40s !important;
         animation-iteration-count: infinite !important;
       }
-      /* Exclude launch doors/content from visual freezes */
-      .launch-door {
-        transition-duration: 1200ms !important;
-      }
-      .launch-content {
-        transition-duration: 700ms !important;
-      }
     }
 
     .scrollbar-none {
@@ -448,16 +441,6 @@
       const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
       const [activeTimelineDay, setActiveTimelineDay] = useState(1);
       const [openFaq, setOpenFaq] = useState(null);
-      const [isLaunched, setIsLaunched] = useState(false);
-
-      useEffect(() => {
-        if (!isLaunched) {
-          document.body.style.overflow = 'hidden';
-          window.scrollTo(0, 0);
-        } else {
-          document.body.style.overflow = 'unset';
-        }
-      }, [isLaunched]);
 
       useEffect(() => {
         if (window.lucide) {
@@ -472,42 +455,6 @@
       return (
         <div className="bg-blueprint-grid min-h-screen text-[#9FB8D4] selection:bg-[#FFB800] selection:text-[#0E2A4A] relative">
           
-          {/* Launch Overlay (Horizontal Split) */}
-          <div className={`fixed inset-0 z-[100] ${isLaunched ? 'pointer-events-none' : 'pointer-events-auto'}`}>
-            
-            {/* Left Door */}
-            <div 
-              className={`launch-door absolute top-0 left-0 w-1/2 h-full bg-[#091C33] transition-transform duration-[1200ms] ease-[cubic-bezier(0.87,0,0.13,1)] ${
-                isLaunched ? '-translate-x-full' : 'translate-x-0'
-              }`}
-            />
-            
-            {/* Right Door */}
-            <div 
-              className={`launch-door absolute top-0 right-0 w-1/2 h-full bg-[#091C33] transition-transform duration-[1200ms] ease-[cubic-bezier(0.87,0,0.13,1)] ${
-                isLaunched ? 'translate-x-full' : 'translate-x-0'
-              }`}
-            />
-            
-            {/* Content */}
-            <div 
-              className={`launch-content absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ease-in-out ${
-                isLaunched ? 'opacity-0 scale-105' : 'opacity-100 scale-100'
-              }`}
-            >
-              <img src="assets/spec.jpeg" alt="SPEC Logo" className="w-24 h-24 md:w-32 md:h-32 object-contain rounded-2xl mb-8 animate-pulse shadow-[0_0_40px_rgba(255,184,0,0.2)]" />
-              <h1 className="text-3xl md:text-5xl font-display font-black text-white tracking-tight mb-12 text-center px-4">
-                SPEC INDUSTRY HACK <span className="text-[#FFB800]">2026</span>
-              </h1>
-              <button 
-                onClick={() => setIsLaunched(true)}
-                className="btn-illuminated btn-illuminated-lg font-mono tracking-widest text-sm uppercase px-12 py-5"
-              >
-                Launch Website
-              </button>
-            </div>
-          </div>
-
           {/* Background Particles System */}
           <ParticleBackground />
 

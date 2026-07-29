@@ -406,14 +406,6 @@ h1, h2, h3, h4, h5, h6 {
     animation-duration: 40s !important;
     animation-iteration-count: infinite !important;
   }
-
-  /* Exclude launch doors/content from visual freezes */
-  .launch-door {
-    transition-duration: 1200ms !important;
-  }
-  .launch-content {
-    transition-duration: 700ms !important;
-  }
 }
 
 /* Animated Timeline Styles & Keyframes */
