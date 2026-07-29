@@ -294,9 +294,14 @@ export default function App() {
         <div className="container relative z-10">
           
 
-          {/* Presents Line */}
-          <div className="text-sm sm:text-base md:text-lg font-bold font-mono text-[#FFB800] uppercase tracking-[0.3em] mb-4 sm:mb-5 select-none text-center">
-            SPEC-IIC PRESENTS
+          {/* Organization & Presents Lines */}
+          <div className="flex flex-col items-center select-none text-center mb-4 sm:mb-6">
+            <span className="text-base sm:text-xl md:text-2xl font-extrabold font-mono text-[#FFB800] uppercase tracking-[0.35em]">
+              SPEC-IIC
+            </span>
+            <span className="text-[10px] sm:text-xs font-mono text-[#9FB8D4] uppercase tracking-[0.4em] mt-1">
+              PRESENTS
+            </span>
           </div>
 
           {/* Headline */}
