@@ -287,49 +287,49 @@ export default function App() {
       </header>
 
       {/* 2. HERO SECTION */}
-      <section className="relative pt-24 sm:pt-28 pb-16 md:pb-24 border-b border-[#EAF2FA]/20 overflow-hidden">
+      <section className="relative pt-20 sm:pt-24 md:pt-24 pb-8 sm:pb-12 md:pb-16 border-b border-[#EAF2FA]/20 overflow-hidden hero-compact">
         <div className="container relative z-10">
           
 
           {/* Organization & Presents Lines */}
-          <div className="flex flex-col items-center select-none text-center mb-4 sm:mb-6">
-            <span className="text-base sm:text-xl md:text-2xl font-extrabold font-mono text-[#FFB800] uppercase tracking-[0.35em]">
+          <div className="flex flex-col items-center select-none text-center mb-2 sm:mb-3 hero-spacing-sm">
+            <span className="text-sm sm:text-lg md:text-xl font-extrabold font-mono text-[#FFB800] uppercase tracking-[0.35em]">
               SPEC-IIC
             </span>
-            <span className="text-[10px] sm:text-xs font-mono text-[#9FB8D4] uppercase tracking-[0.4em] mt-1">
+            <span className="text-[9px] sm:text-[10px] font-mono text-[#9FB8D4] uppercase tracking-[0.4em] mt-0.5">
               PRESENTS
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white font-display tracking-wider leading-[1.08] max-w-5xl mx-auto text-center mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white font-display tracking-wider leading-[1.08] max-w-5xl mx-auto text-center mb-3 sm:mb-5 hero-title hero-spacing-sm">
             SPEC INDUSTRY HACK <span className="text-[#FFB800]">2026</span>
           </h1>
 
           {/* Tagline */}
-          <p className="text-xl sm:text-2xl font-display font-bold text-[#FFFFFF] max-w-3xl mx-auto text-center mb-4 tracking-wide">
+          <p className="text-lg sm:text-xl md:text-2xl font-display font-bold text-[#FFFFFF] max-w-3xl mx-auto text-center mb-2 sm:mb-3 tracking-wide hero-spacing-sm">
             &ldquo;Industry Challenges, Innovative Solutions, Incredible Impact.&rdquo;
           </p>
 
           {/* Organizer Attribution */}
-          <p className="text-base text-[#9FB8D4] max-w-3xl mx-auto text-center mb-10 leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-base text-[#9FB8D4] max-w-3xl mx-auto text-center mb-5 sm:mb-6 leading-relaxed hero-spacing-md">
             Organized by <strong className="text-white font-semibold">St. Peter&apos;s Engineering College</strong>, in collaboration with <strong className="text-[#FFB800]">GeeksforGeeks Student Chapter</strong> &amp; <strong className="text-[#E8483C]">Spectrum Circle</strong>.
           </p>
 
           {/* Event Dates & Venue Card Strip */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-10 text-xs font-mono">
-            <div className="flex items-center gap-2.5 px-4 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-full text-[#FFFFFF]">
-              <Calendar className="w-4 h-4 text-[#E8483C]" />
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-5 sm:mb-6 text-xs font-mono hero-spacing-md">
+            <div className="flex items-center gap-2 px-3.5 py-2 bg-[#123A63] border border-[#EAF2FA]/30 rounded-full text-[#FFFFFF]">
+              <Calendar className="w-3.5 h-3.5 text-[#E8483C]" />
               <span>1st–2nd August 2026</span>
             </div>
-            <div className="flex items-center gap-2.5 px-4 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-full text-[#FFFFFF]">
-              <MapPin className="w-4 h-4 text-[#FFB800]" />
+            <div className="flex items-center gap-2 px-3.5 py-2 bg-[#123A63] border border-[#EAF2FA]/30 rounded-full text-[#FFFFFF]">
+              <MapPin className="w-3.5 h-3.5 text-[#FFB800]" />
               <span>St. Peter&apos;s Engineering College Campus</span>
             </div>
           </div>
 
           {/* Dual CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mb-16">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-12 hero-spacing-lg">
             <a
               href={FORM_LINK}
               target="_blank"
@@ -346,44 +346,44 @@ export default function App() {
           </div>
 
           {/* Blueprint Key Stats Bar with Dimension Lines */}
-          <div className="pt-8 border-t border-[#EAF2FA]/20">
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl relative">
-                <div className="text-2xl sm:text-3xl font-extrabold font-display text-white">24+</div>
-                <div className="text-xs font-mono text-[#9FB8D4] mt-1">Hours Non-Stop</div>
-                <div className="mt-3 pt-2 border-t border-[#EAF2FA]/20 text-[10px] font-mono text-[#6B8BAE]">
+          <div className="pt-5 sm:pt-6 border-t border-[#EAF2FA]/20">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4">
+              <div className="p-3 sm:p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl relative">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-display text-white">24+</div>
+                <div className="text-[11px] sm:text-xs font-mono text-[#9FB8D4] mt-0.5 sm:mt-1">Hours Non-Stop</div>
+                <div className="mt-2 sm:mt-3 pt-1.5 sm:pt-2 border-t border-[#EAF2FA]/20 text-[9px] sm:text-[10px] font-mono text-[#6B8BAE]">
                   ◄── DURATION ──►
                 </div>
               </div>
 
-              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl relative">
-                <div className="text-2xl sm:text-3xl font-extrabold font-display text-[#FFB800]">1000+</div>
-                <div className="text-xs font-mono text-[#9FB8D4] mt-1">Participants</div>
-                <div className="mt-3 pt-2 border-t border-[#EAF2FA]/20 text-[10px] font-mono text-[#6B8BAE]">
+              <div className="p-3 sm:p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl relative">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-display text-[#FFB800]">1000+</div>
+                <div className="text-[11px] sm:text-xs font-mono text-[#9FB8D4] mt-0.5 sm:mt-1">Participants</div>
+                <div className="mt-2 sm:mt-3 pt-1.5 sm:pt-2 border-t border-[#EAF2FA]/20 text-[9px] sm:text-[10px] font-mono text-[#6B8BAE]">
                   ◄── CAPACITY ──►
                 </div>
               </div>
 
-              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl relative">
-                <div className="text-2xl sm:text-3xl font-extrabold font-display text-white">200</div>
-                <div className="text-xs font-mono text-[#9FB8D4] mt-1">Innovator Teams</div>
-                <div className="mt-3 pt-2 border-t border-[#EAF2FA]/20 text-[10px] font-mono text-[#6B8BAE]">
+              <div className="p-3 sm:p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl relative">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-display text-white">200</div>
+                <div className="text-[11px] sm:text-xs font-mono text-[#9FB8D4] mt-0.5 sm:mt-1">Innovator Teams</div>
+                <div className="mt-2 sm:mt-3 pt-1.5 sm:pt-2 border-t border-[#EAF2FA]/20 text-[9px] sm:text-[10px] font-mono text-[#6B8BAE]">
                   ◄── SQUADS ──►
                 </div>
               </div>
 
-              <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl relative">
-                <div className="text-2xl sm:text-3xl font-extrabold font-display text-[#FFB800]">₹1,00,000</div>
-                <div className="text-xs font-mono text-[#9FB8D4] mt-1">Prize Pool</div>
-                <div className="mt-3 pt-2 border-t border-[#EAF2FA]/20 text-[10px] font-mono text-[#6B8BAE]">
+              <div className="p-3 sm:p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl relative">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-display text-[#FFB800]">₹1,00,000</div>
+                <div className="text-[11px] sm:text-xs font-mono text-[#9FB8D4] mt-0.5 sm:mt-1">Prize Pool</div>
+                <div className="mt-2 sm:mt-3 pt-1.5 sm:pt-2 border-t border-[#EAF2FA]/20 text-[9px] sm:text-[10px] font-mono text-[#6B8BAE]">
                   ◄── REWARDS ──►
                 </div>
               </div>
 
-              <div className="col-span-2 md:col-span-1 p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl relative">
-                <div className="text-2xl sm:text-3xl font-extrabold font-display text-white">15</div>
-                <div className="text-xs font-mono text-[#9FB8D4] mt-1">Industry Partners</div>
-                <div className="mt-3 pt-2 border-t border-[#EAF2FA]/20 text-[10px] font-mono text-[#6B8BAE]">
+              <div className="col-span-2 md:col-span-1 p-3 sm:p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl relative">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-display text-white">15</div>
+                <div className="text-[11px] sm:text-xs font-mono text-[#9FB8D4] mt-0.5 sm:mt-1">Industry Partners</div>
+                <div className="mt-2 sm:mt-3 pt-1.5 sm:pt-2 border-t border-[#EAF2FA]/20 text-[9px] sm:text-[10px] font-mono text-[#6B8BAE]">
                   ◄── SPONSORS ──►
                 </div>
               </div>
