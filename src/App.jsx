@@ -290,12 +290,12 @@ export default function App() {
       </header>
 
       {/* 2. HERO SECTION */}
-      <section className="relative pt-32 sm:pt-36 pb-16 md:pb-24 border-b border-[#EAF2FA]/20 overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 pb-16 md:pb-24 border-b border-[#EAF2FA]/20 overflow-hidden">
         <div className="container relative z-10">
           
 
           {/* Presents Line */}
-          <div className="text-xs sm:text-sm font-mono text-[#FFB800] uppercase tracking-[0.25em] mb-3 select-none text-center">
+          <div className="text-sm sm:text-base md:text-lg font-bold font-mono text-[#FFB800] uppercase tracking-[0.3em] mb-4 sm:mb-5 select-none text-center">
             SPEC-IIC PRESENTS
           </div>
 
