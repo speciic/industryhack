@@ -168,61 +168,55 @@ export default function App() {
       <section className="relative pt-12 md:pt-16 pb-16 md:pb-24 border-b border-[#EAF2FA]/20 overflow-hidden">
         <div className="container relative z-10">
           
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-            {/* Status Chip */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-[#123A63] border border-[#EAF2FA]/30 text-xs font-mono text-[#FFFFFF]">
-              <span className="w-2 h-2 rounded-none bg-[#E8483C]"></span>
-              <span className="tracking-wider uppercase">NATIONAL-LEVEL 24-HOUR COLLEGE HACKATHON</span>
+          <div className="flex flex-col items-center text-center mx-auto mb-16">
+            {/* Presents Line */}
+            <div className="text-xs sm:text-sm font-mono text-[#FFB800] uppercase tracking-[0.25em] mb-3 select-none">
+              SPEC-IIC PRESENTS
             </div>
 
-            {/* Industrial Rubber Stamp Device */}
-            <div className="rubber-stamp hidden sm:inline-block">
-              INDUSTRY APPROVED // SPEC-2026
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white font-display tracking-wider leading-[1.08] max-w-5xl mb-6">
+              SPEC INDUSTRY HACK <span className="text-[#FFB800]">2026</span>
+            </h1>
+
+            {/* Tagline */}
+            <p className="text-xl sm:text-2xl font-display font-bold text-[#FFFFFF] max-w-3xl mb-4 tracking-wide">
+              &ldquo;Industry Challenges, Innovative Solutions, Incredible Impact.&rdquo;
+            </p>
+
+            {/* Organizer Attribution */}
+            <p className="text-base text-[#9FB8D4] max-w-3xl mb-10 leading-relaxed">
+              Organized by <strong className="text-white font-semibold">St. Peter&apos;s Engineering College</strong>, in collaboration with <strong className="text-[#FFB800]">GeeksforGeeks Student Chapter</strong> &amp; <strong className="text-[#E8483C]">Spectrum Circle</strong>.
+            </p>
+
+            {/* Event Dates & Venue Card Strip */}
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-10 text-xs font-mono">
+              <div className="flex items-center gap-2.5 px-4 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none text-[#FFFFFF]">
+                <Calendar className="w-4 h-4 text-[#E8483C]" />
+                <span>1st–2nd August 2026</span>
+              </div>
+              <div className="flex items-center gap-2.5 px-4 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none text-[#FFFFFF]">
+                <MapPin className="w-4 h-4 text-[#FFB800]" />
+                <span>St. Peter&apos;s Engineering College Campus</span>
+              </div>
             </div>
-          </div>
 
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white font-display tracking-wider leading-[1.08] max-w-5xl mb-6">
-            SPEC INDUSTRY HACK <span className="text-[#FFB800]">2026</span>
-          </h1>
-
-          {/* Tagline */}
-          <p className="text-xl sm:text-2xl font-display font-bold text-[#FFFFFF] max-w-3xl mb-4 tracking-wide">
-            &ldquo;Industry Challenges, Innovative Solutions, Incredible Impact.&rdquo;
-          </p>
-
-          {/* Organizer Attribution */}
-          <p className="text-base text-[#9FB8D4] max-w-3xl mb-10 leading-relaxed">
-            Organized by <strong className="text-white font-semibold">St. Peter&apos;s Engineering College</strong>, in collaboration with <strong className="text-[#FFB800]">GeeksforGeeks Student Chapter</strong> &amp; <strong className="text-[#E8483C]">Spectrum Circle</strong>.
-          </p>
-
-          {/* Event Dates & Venue Card Strip */}
-          <div className="flex flex-wrap items-center gap-4 mb-10 text-xs font-mono">
-            <div className="flex items-center gap-2.5 px-4 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none text-[#FFFFFF]">
-              <Calendar className="w-4 h-4 text-[#E8483C]" />
-              <span>1st–2nd August 2026</span>
+            {/* Dual CTAs */}
+            <div className="flex flex-wrap items-center justify-center gap-6">
+              <a
+                href={FORM_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-illuminated btn-illuminated-lg"
+              >
+                <span>Register Now</span>
+                <ArrowUpRight className="w-5 h-5" />
+              </a>
+              <a href="#themes" className="btn-ghost btn-ghost-lg">
+                <span>Explore Themes</span>
+                <ChevronRight className="w-5 h-5 text-[#9FB8D4]" />
+              </a>
             </div>
-            <div className="flex items-center gap-2.5 px-4 py-2.5 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none text-[#FFFFFF]">
-              <MapPin className="w-4 h-4 text-[#FFB800]" />
-              <span>St. Peter&apos;s Engineering College Campus</span>
-            </div>
-          </div>
-
-          {/* Dual CTAs */}
-          <div className="flex flex-wrap items-center gap-6 mb-16">
-            <a
-              href={FORM_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-illuminated btn-illuminated-lg"
-            >
-              <span>Register Now</span>
-              <ArrowUpRight className="w-5 h-5" />
-            </a>
-            <a href="#themes" className="btn-ghost btn-ghost-lg">
-              <span>Explore Themes</span>
-              <ChevronRight className="w-5 h-5 text-[#9FB8D4]" />
-            </a>
           </div>
 
           {/* Blueprint Key Stats Bar with Dimension Lines */}
@@ -440,10 +434,6 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="section-tag mx-auto">
-              <Rocket className="w-3.5 h-3.5" />
-              <span>Core Mission</span>
-            </div>
             <h2 className="section-title">Event Objectives</h2>
             <p className="section-subtitle mx-auto">
               Constructed to cultivate technical rigor, real-world execution, and collaborative engineering excellence.
@@ -512,10 +502,6 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="section-tag mx-auto">
-              <Code2 className="w-3.5 h-3.5" />
-              <span>3-Stage Sequence</span>
-            </div>
             <h2 className="section-title">Hackathon Progression Structure</h2>
             <p className="section-subtitle mx-auto">
               A rigorous 3-stage evaluation framework designed to test raw algorithmic execution, architectural ideation, and full-stack building.
@@ -595,10 +581,6 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="section-tag mx-auto">
-              <Clock className="w-3.5 h-3.5" />
-              <span>24-Hour Schedule</span>
-            </div>
             <h2 className="section-title">Event Timeline</h2>
             <p className="section-subtitle mx-auto">
               Detailed hour-by-hour operational breakdown across August 1st and August 2nd, 2026.
@@ -765,10 +747,6 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="section-tag mx-auto">
-              <Zap className="w-3.5 h-3.5" />
-              <span>Participant Experience</span>
-            </div>
             <h2 className="section-title">Facilities Provided</h2>
             <p className="section-subtitle mx-auto">
               We ensure all infrastructure and dietary needs are taken care of so teams can remain focused on building.
@@ -843,10 +821,6 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="section-tag mx-auto">
-              <Trophy className="w-3.5 h-3.5" />
-              <span>Rewards &amp; Impact</span>
-            </div>
             <h2 className="section-title">Prizes &amp; Opportunities</h2>
             <p className="section-subtitle mx-auto">
               Substantial financial rewards, API credits, and direct career acceleration pathways for top teams.
@@ -855,12 +829,6 @@ export default function App() {
 
           {/* Primary Reward: 100K Cash Prize (Industrial Blueprint Highlighted Card) */}
           <div className="bg-[#123A63] border-2 border-[#FFB800] p-8 md:p-12 mb-12 relative overflow-hidden">
-            {/* Rubber Approval Stamp inside Cash Prize */}
-            <div className="absolute top-4 right-4 sm:right-8 opacity-90">
-              <span className="rubber-stamp border-[#E8483C] text-[#E8483C] text-[10px] py-1 px-2.5">
-                PRIMARY REWARD // APPROVED
-              </span>
-            </div>
 
             <div className="text-left max-w-3xl">
               <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#091C33] border border-[#FFB800] text-xs font-mono text-[#FFB800] uppercase tracking-widest mb-6">
@@ -1056,10 +1024,6 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="section-tag mx-auto">
-              <CheckCircle2 className="w-3.5 h-3.5" />
-              <span>Deliverables</span>
-            </div>
             <h2 className="section-title">Expected Outcomes</h2>
             <p className="section-subtitle mx-auto">
               Tangible technical and career results generated through 24 hours of structured engineering.
@@ -1110,10 +1074,6 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="section-tag mx-auto">
-              <HelpCircle className="w-3.5 h-3.5" />
-              <span>Questions &amp; Details</span>
-            </div>
             <h2 className="section-title">Frequently Asked Questions</h2>
             <p className="section-subtitle mx-auto">
               Key information regarding registration, team rules, logistics, and hardware requirements.
@@ -1176,7 +1136,6 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-[#EAF2FA]/20 items-center">
             
             <div className="lg:col-span-7">
-              <div className="text-xs font-mono text-[#E8483C] mb-2 uppercase tracking-widest">[SPEC-2026] OFFICIAL EVENT</div>
               <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-white mb-4">
                 Ready to solve real industry challenges?
               </h2>
