@@ -51,6 +51,7 @@ import logo14 from '../assets/14.png';
 import logo15 from '../assets/15.png';
 import logo16 from '../assets/16.png';
 import logo17 from '../assets/17.jpeg';
+import specLogo from '../assets/spec.jpeg';
 
 const clubLogos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14, logo15, logo16, logo17];
 
@@ -218,6 +219,16 @@ export default function App() {
   const [activeTimelineDay, setActiveTimelineDay] = useState(1);
   const [selectedStageIndex, setSelectedStageIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
+  const [isLaunched, setIsLaunched] = useState(false);
+
+  React.useEffect(() => {
+    if (!isLaunched) {
+      document.body.style.overflow = 'hidden';
+      window.scrollTo(0, 0);
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isLaunched]);
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -226,6 +237,42 @@ export default function App() {
   return (
     <div className="bg-blueprint-grid min-h-screen text-[#9FB8D4] selection:bg-[#FFB800] selection:text-[#0E2A4A] relative">
       
+      {/* Launch Overlay (Horizontal Split) */}
+      <div className={`fixed inset-0 z-[100] ${isLaunched ? 'pointer-events-none' : 'pointer-events-auto'}`}>
+        
+        {/* Left Door */}
+        <div 
+          className={`launch-door absolute top-0 left-0 w-1/2 h-full bg-[#091C33] transition-transform duration-[1200ms] ease-[cubic-bezier(0.87,0,0.13,1)] ${
+            isLaunched ? '-translate-x-full' : 'translate-x-0'
+          }`}
+        />
+        
+        {/* Right Door */}
+        <div 
+          className={`launch-door absolute top-0 right-0 w-1/2 h-full bg-[#091C33] transition-transform duration-[1200ms] ease-[cubic-bezier(0.87,0,0.13,1)] ${
+            isLaunched ? 'translate-x-full' : 'translate-x-0'
+          }`}
+        />
+        
+        {/* Content */}
+        <div 
+          className={`launch-content absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ease-in-out ${
+            isLaunched ? 'opacity-0 scale-105' : 'opacity-100 scale-100'
+          }`}
+        >
+          <img src={specLogo} alt="SPEC Logo" className="w-24 h-24 md:w-32 md:h-32 object-contain rounded-2xl mb-8 animate-pulse shadow-[0_0_40px_rgba(255,184,0,0.2)]" />
+          <h1 className="text-3xl md:text-5xl font-display font-black text-white tracking-tight mb-12 text-center px-4">
+            SPEC INDUSTRY HACK <span className="text-[#FFB800]">2026</span>
+          </h1>
+          <button 
+            onClick={() => setIsLaunched(true)}
+            className="btn-illuminated btn-illuminated-lg font-mono tracking-widest text-sm uppercase px-12 py-5"
+          >
+            Launch Website
+          </button>
+        </div>
+      </div>
+
       {/* Background Particles System */}
       <ParticleBackground />
 
@@ -236,9 +283,7 @@ export default function App() {
           {/* Logo Mark (Left aligned) */}
           <div className="flex-1 flex justify-start">
             <a href="#" className="flex items-center gap-2.5 sm:gap-3 text-white font-display font-bold text-xs md:text-sm tracking-tight no-underline group">
-              <div className="w-7 h-7 md:w-8 md:h-8 bg-[#123A63]/80 border border-[#EAF2FA]/30 group-hover:border-[#FFB800] flex items-center justify-center rounded-lg text-[#FFB800] font-mono font-bold transition-colors">
-                SIH
-              </div>
+              <img src={specLogo} alt="SPEC Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain rounded-md" />
               <span className="leading-none text-white font-extrabold text-xs md:text-sm tracking-wider">SPEC INDUSTRY HACK</span>
             </a>
           </div>
