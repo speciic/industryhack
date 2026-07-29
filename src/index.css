@@ -1,0 +1,369 @@
+@import "tailwindcss";
+
+:root {
+  /* Industrial Blueprint Color System (Strictly NO Gradients) */
+  --bg-blueprint: #0E2A4A;     /* Deep drafting paper blue */
+  --bg-panel: #123A63;         /* Raised schematic panel blue */
+  --bg-dark-panel: #091C33;    /* Recessed dark panel blue */
+  
+  --line-white: #EAF2FA;       /* White drafting linework & hairline borders */
+  --line-dim: rgba(234, 242, 250, 0.25);
+  --line-faint: rgba(234, 242, 250, 0.08);
+  
+  --accent-signal: #FFB800;   /* Safety-Yellow — reserved for CTA & key numeric stats */
+  --accent-stamp: #E8483C;    /* Stamp-Red — used for Level tags, status, approval stamps */
+  
+  --text-bright: #FFFFFF;      /* Primary text on blueprint blue */
+  --text-dim: #9FB8D4;         /* Annotation & caption text */
+  --text-muted: #6B8BAE;       /* Faint metadata text */
+  
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Floating Particles Colors */
+  --particle-color-0: #FFB800; /* Safety Yellow */
+  --particle-color-1: #E8483C; /* Stamp Red */
+  --particle-color-2: #EAF2FA; /* White Ink drafting line */
+}
+
+/* Base Resets & Blueprint Technical Setup */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-blueprint);
+  color: var(--text-dim);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-blueprint);
+  color: var(--text-dim);
+  padding-top: 5.5rem; /* Offset for floating fixed nav */
+}
+
+/* Blueprint Graph Paper Background Grid (Fine Hairline Grid) */
+.bg-blueprint-grid {
+  background-color: var(--bg-blueprint);
+  background-image: 
+    linear-gradient(to right, rgba(234, 242, 250, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(234, 242, 250, 0.07) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Visible Keyboard Focus States */
+:focus-visible {
+  outline: 2px solid var(--accent-signal);
+  outline-offset: 4px;
+}
+
+/* Typography & Stencil Headers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-bright);
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Floating Glassmorphism Navbar (Curved & Slim) */
+.nav-glassmorphism {
+  background-color: rgba(14, 42, 74, 0.65) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(234, 242, 250, 0.25) !important;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.45);
+  border-radius: 9999px !important; /* Fully curved pill shape */
+}
+
+/* Blueprint Title-Block Info Box */
+.blueprint-title-block {
+  background-color: var(--bg-dark-panel);
+  border: 2px solid var(--line-white);
+  padding: 1rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--line-white);
+  position: relative;
+}
+
+.blueprint-title-block::before {
+  content: 'FIG. SPEC-2026';
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background-color: var(--bg-blueprint);
+  padding: 0 6px;
+  font-size: 0.65rem;
+  color: var(--accent-signal);
+  border: 1px solid var(--accent-signal);
+  letter-spacing: 0.1em;
+}
+
+/* Signature Register Now CTA (Safety Yellow + Technical Offset Annotation Box) */
+.btn-illuminated {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: var(--accent-signal);
+  color: var(--bg-blueprint) !important;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.8rem 1.85rem;
+  border-radius: 0px;
+  border: 2px solid var(--accent-signal);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px var(--bg-blueprint), 0 0 0 5px var(--line-white);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  animation: signalBlink 2.5s infinite steps(1);
+  position: relative;
+  user-select: none;
+  white-space: nowrap;
+  shrink: 0;
+}
+
+.btn-illuminated:hover {
+  background-color: #FFCA28;
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 2px var(--bg-blueprint), 0 0 0 4px var(--accent-signal);
+}
+
+.btn-illuminated:active {
+  transform: translateY(0);
+  box-shadow: 0 0 0 2px var(--bg-blueprint), 0 0 0 3px var(--accent-signal);
+}
+
+.btn-illuminated-lg {
+  padding: 1rem 2.25rem;
+  font-size: 1.05rem;
+}
+
+@keyframes signalBlink {
+  0%, 100% {
+    box-shadow: 0 0 0 3px var(--bg-blueprint), 0 0 0 5px var(--line-white);
+  }
+  50% {
+    box-shadow: 0 0 0 3px var(--bg-blueprint), 0 0 0 5px var(--accent-signal);
+  }
+}
+
+/* Secondary Ghost / Technical Outline Button */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: transparent;
+  color: var(--text-bright);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.8rem 1.85rem;
+  border-radius: 0px;
+  border: 1px solid var(--line-white);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-ghost:hover {
+  background-color: var(--bg-panel);
+  border-color: var(--accent-signal);
+  color: var(--accent-signal);
+}
+
+.btn-ghost-lg {
+  padding: 1rem 2.25rem;
+  font-size: 1.05rem;
+}
+
+/* Blueprint Section Header Tags */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-stamp);
+  background-color: rgba(232, 72, 60, 0.1);
+  border: 1px solid var(--accent-stamp);
+  padding: 0.35rem 0.85rem;
+  border-radius: 0px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: var(--text-bright);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  max-width: 680px;
+}
+
+/* Cards & Blueprint Drafting Panels (Sharp 0px Corners) */
+.tech-card {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--line-dim);
+  border-radius: 0px;
+  padding: 1.75rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  position: relative;
+}
+
+.tech-card:hover {
+  border-color: var(--line-white);
+  background-color: #164373;
+}
+
+/* Rubber Stamp Overlay Device */
+.rubber-stamp {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: var(--accent-stamp);
+  border: 2px solid var(--accent-stamp);
+  padding: 0.4rem 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transform: rotate(-8deg);
+  box-shadow: 0 0 0 2px var(--bg-blueprint);
+  user-select: none;
+}
+
+/* Dimension Lines Utility */
+.dimension-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  width: 100%;
+}
+.dimension-line::before,
+.dimension-line::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--line-dim);
+}
+
+/* Floating Particles Core Styling */
+#particles-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  bottom: -5%;
+  width: var(--width);
+  height: var(--width);
+  border-radius: 50%;
+  opacity: 0;
+  transform-origin: center;
+  will-change: transform, opacity;
+  animation-name: floatUp;
+  animation-duration: var(--duration);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: var(--max-opacity);
+  }
+  80% {
+    opacity: var(--max-opacity);
+  }
+  100% {
+    transform: translateY(-110vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.particle[data-color-type="0"] {
+  background-color: var(--particle-color-0);
+  box-shadow: 0 0 calc(var(--width) * 2) var(--particle-color-0);
+}
+.particle[data-color-type="1"] {
+  background-color: var(--particle-color-1);
+  box-shadow: 0 0 calc(var(--width) * 2) var(--particle-color-1);
+}
+.particle[data-color-type="2"] {
+  background-color: var(--particle-color-2);
+  box-shadow: 0 0 calc(var(--width) * 2) var(--particle-color-2);
+}
+
+/* Accessibility: prefers-reduced-motion handling */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .btn-illuminated {
+    animation: none !important;
+  }
+
+  /* Exclude background particles from visual freezes so they animate consistently */
+  .particle {
+    animation-name: floatUp !important;
+    animation-duration: var(--duration) !important;
+    animation-iteration-count: infinite !important;
+    animation-delay: var(--delay) !important;
+    transform: none;
+    opacity: unset;
+  }
+}
