@@ -860,16 +860,49 @@ export default function App() {
             </p>
           </div>
 
-          <div className="bg-[#123A63] border-2 border-[#FFB800] rounded-none p-8 md:p-12 mb-12 text-center relative">
-            <span className="inline-block px-4 py-1 bg-[#091C33] border border-[#FFB800] text-[#FFB800] font-mono text-xs font-bold rounded-none mb-4 tracking-widest uppercase">
-              COMBINED VALUE POOL
-            </span>
-            <div className="text-5xl sm:text-7xl font-extrabold font-display text-white mb-4 tracking-tight">
-              ₹1,00,000 <span className="text-2xl sm:text-4xl text-[#FFB800] font-bold">CASH POOL</span>
+          {/* Primary Reward: 100K Cash Prize (Industrial Blueprint Highlighted Card) */}
+          <div className="bg-[#123A63] border-2 border-[#FFB800] p-8 md:p-12 mb-12 relative overflow-hidden">
+            {/* Rubber Approval Stamp inside Cash Prize */}
+            <div className="absolute top-4 right-4 sm:right-8 opacity-90">
+              <span className="rubber-stamp border-[#E8483C] text-[#E8483C] text-[10px] py-1 px-2.5">
+                PRIMARY REWARD // APPROVED
+              </span>
             </div>
-            <p className="text-base text-[#9FB8D4] max-w-2xl mx-auto">
-              Awarded directly to winning teams across track domains along with certificates of excellence signed by college and industry leadership.
-            </p>
+
+            <div className="text-left max-w-3xl">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#091C33] border border-[#FFB800] text-xs font-mono text-[#FFB800] uppercase tracking-widest mb-6">
+                <Award className="w-3.5 h-3.5 text-[#FFB800]" />
+                <span>OFFICIAL CASH PRIZE</span>
+              </span>
+              
+              <h3 className="text-xs font-mono text-[#9FB8D4] mb-2 tracking-widest uppercase">
+                [SPEC-REWARD-01] CASH DISTRIBUTION
+              </h3>
+              
+              {/* Huge cash display with blueprint dimension styling */}
+              <div className="text-5xl sm:text-7xl font-extrabold font-display text-white mb-4 tracking-tight">
+                ₹1,00,000
+              </div>
+
+              <div className="dimension-line mb-6 max-w-lg">
+                <span className="text-[#FFB800] font-bold">100% DIRECT CASH POOL</span>
+              </div>
+
+              <p className="text-base sm:text-lg text-[#EAF2FA] leading-relaxed mb-4">
+                The <strong className="text-white">₹1,00,000 cash prize</strong> is awarded directly to the top-performing engineering teams demonstrating the most innovative solutions, robust architecture, and clean code execution across the track domains.
+              </p>
+              
+              <div className="flex flex-wrap gap-6 text-xs font-mono text-[#9FB8D4] mt-6 pt-4 border-t border-[#EAF2FA]/15">
+                <span className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#FFB800]" />
+                  <span>1st Place: Highest Allocation</span>
+                </span>
+                <span className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#FFB800]" />
+                  <span>Domain Track Winners: Equal Distribution</span>
+                </span>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
