@@ -34,6 +34,26 @@ import {
   Youtube
 } from 'lucide-react';
 
+import logo1 from '../assets/1.png';
+import logo2 from '../assets/2.png';
+import logo3 from '../assets/3.png';
+import logo4 from '../assets/4.png';
+import logo5 from '../assets/5.png';
+import logo6 from '../assets/6.png';
+import logo7 from '../assets/7.png';
+import logo8 from '../assets/8.png';
+import logo9 from '../assets/9.png';
+import logo10 from '../assets/10.png';
+import logo11 from '../assets/11.png';
+import logo12 from '../assets/12.png';
+import logo13 from '../assets/13.png';
+import logo14 from '../assets/14.png';
+import logo15 from '../assets/15.png';
+import logo16 from '../assets/16.png';
+import logo17 from '../assets/17.jpeg';
+
+const clubLogos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14, logo15, logo16, logo17];
+
 const FORM_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSfy5-SALibn0Xa3l5RTMQTzYIud0cwCjErzYoWAA9aUbto6eQ/viewform?usp=publish-editor";
 
 function ParticleBackground() {
@@ -1146,42 +1166,18 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            
-            <div className="bg-[#123A63] border-2 border-[#EAF2FA]/30 rounded-2xl p-8 flex flex-col justify-between">
-              <div>
-                <div className="inline-block px-3 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#FFB800] font-mono text-xs font-bold rounded-full mb-4">
-                  STUDENT CHAPTER
-                </div>
-                <h3 className="text-xl font-bold font-display text-white mb-3">GeeksforGeeks Student Chapter</h3>
-                <p className="text-sm text-[#9FB8D4] leading-relaxed mb-6">
-                  St. Peter&apos;s Engineering College GeeksforGeeks Student Chapter drives algorithmic coding excellence, technical bootcamps, and competitive programming readiness across the student community.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-[#EAF2FA]/20 flex items-center justify-between text-xs font-mono text-[#9FB8D4]">
-                <span>Role: Co-Organizer &amp; Coding Track Facilitator</span>
-                <ExternalLink className="w-4 h-4 text-[#FFB800]" />
-              </div>
-            </div>
+        </div>
 
-            <div className="bg-[#123A63] border-2 border-[#EAF2FA]/30 rounded-2xl p-8 flex flex-col justify-between">
-              <div>
-                <div className="inline-block px-3 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#E8483C] font-mono text-xs font-bold rounded-full mb-4">
-                  TECHNICAL COMMUNITY
-                </div>
-                <h3 className="text-xl font-bold font-display text-white mb-3">Spectrum Circle</h3>
-                <p className="text-sm text-[#9FB8D4] leading-relaxed mb-6">
-                  An elite peer technical collective focusing on practical software engineering, cloud infrastructure, AI development, and industry mentor connect programs.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-[#EAF2FA]/20 flex items-center justify-between text-xs font-mono text-[#9FB8D4]">
-                <span>Role: Co-Organizer &amp; Industry Liaison</span>
-                <ExternalLink className="w-4 h-4 text-[#E8483C]" />
-              </div>
-            </div>
-
+        {/* Edge-to-edge Marquee */}
+        <div className="marquee-container flex overflow-hidden w-full relative py-8 mt-4">
+          <div className="marquee-content flex shrink-0 w-max items-center justify-around gap-8 pr-8">
+            {clubLogos.map((logo, index) => (
+              <img key={`logo-1-${index}`} src={logo} alt={`Supporting Club ${index + 1}`} className="h-20 sm:h-28 w-auto object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform" />
+            ))}
+            {clubLogos.map((logo, index) => (
+              <img key={`logo-2-${index}`} src={logo} alt={`Supporting Club ${index + 1}`} className="h-20 sm:h-28 w-auto object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform" />
+            ))}
           </div>
-
         </div>
       </section>
 

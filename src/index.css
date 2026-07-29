@@ -399,6 +399,13 @@ h1, h2, h3, h4, h5, h6 {
     transform: none;
     opacity: unset;
   }
+
+  /* Exclude marquee from visual freezes so it always scrolls */
+  .marquee-content {
+    animation-name: scroll-left !important;
+    animation-duration: 40s !important;
+    animation-iteration-count: infinite !important;
+  }
 }
 
 /* Animated Timeline Styles & Keyframes */
@@ -550,8 +557,21 @@ h1, h2, h3, h4, h5, h6 {
 .scrollbar-none {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}/* Seamless Marquee Animation */
+.marquee-container {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
+.marquee-content {
+  animation: scroll-left 40s linear infinite;
+}
 
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
 
-
+@keyframes scroll-left {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}

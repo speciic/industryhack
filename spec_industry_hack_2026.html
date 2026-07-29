@@ -356,6 +356,36 @@
         transform: none;
         opacity: unset;
       }
+      /* Exclude marquee from visual freezes so it always scrolls */
+      .marquee-content {
+        animation-name: scroll-left !important;
+        animation-duration: 40s !important;
+        animation-iteration-count: infinite !important;
+      }
+    }
+
+    .scrollbar-none {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Seamless Marquee Animation */
+    .marquee-container {
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+    
+    .marquee-content {
+      animation: scroll-left 30s linear infinite;
+    }
+    
+    .marquee-container:hover .marquee-content {
+      animation-play-state: paused;
+    }
+    
+    @keyframes scroll-left {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
     }
   </style>
 </head>
@@ -364,6 +394,14 @@
 
   <script type="text/babel">
     const { useState, useEffect } = React;
+    const clubLogos = [
+      'assets/1.png', 'assets/2.png', 'assets/3.png', 'assets/4.png',
+      'assets/5.png', 'assets/6.png', 'assets/7.png', 'assets/8.png',
+      'assets/9.png', 'assets/10.png', 'assets/11.png', 'assets/12.png',
+      'assets/13.png', 'assets/14.png', 'assets/15.png', 'assets/16.png',
+      'assets/17.jpeg'
+    ];
+
     const FORM_LINK = "https://forms.gle/REPLACE_WITH_ACTUAL_FORM_LINK";
 
     function ParticleBackground() {
@@ -1294,42 +1332,18 @@
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                
-                <div className="bg-[#123A63] border-2 border-[#EAF2FA]/30 rounded-none p-8 flex flex-col justify-between">
-                  <div>
-                    <div className="inline-block px-3 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#FFB800] font-mono text-xs font-bold rounded-none mb-4">
-                      STUDENT CHAPTER
-                    </div>
-                    <h3 className="text-xl font-bold font-display text-white mb-3">GeeksforGeeks Student Chapter</h3>
-                    <p className="text-sm text-[#9FB8D4] leading-relaxed mb-6">
-                      St. Peter&apos;s Engineering College GeeksforGeeks Student Chapter drives algorithmic coding excellence, technical bootcamps, and competitive programming readiness across the student community.
-                    </p>
-                  </div>
-                  <div className="pt-4 border-t border-[#EAF2FA]/20 flex items-center justify-between text-xs font-mono text-[#9FB8D4]">
-                    <span>Role: Co-Organizer &amp; Coding Track Facilitator</span>
-                    <i data-lucide="external-link" className="w-4 h-4 text-[#FFB800]"></i>
-                  </div>
-                </div>
-
-                <div className="bg-[#123A63] border-2 border-[#EAF2FA]/30 rounded-none p-8 flex flex-col justify-between">
-                  <div>
-                    <div className="inline-block px-3 py-1 bg-[#091C33] border border-[#EAF2FA]/30 text-[#E8483C] font-mono text-xs font-bold rounded-none mb-4">
-                      TECHNICAL COMMUNITY
-                    </div>
-                    <h3 className="text-xl font-bold font-display text-white mb-3">Spectrum Circle</h3>
-                    <p className="text-sm text-[#9FB8D4] leading-relaxed mb-6">
-                      An elite peer technical collective focusing on practical software engineering, cloud infrastructure, AI development, and industry mentor connect programs.
-                    </p>
-                  </div>
-                  <div className="pt-4 border-t border-[#EAF2FA]/20 flex items-center justify-between text-xs font-mono text-[#9FB8D4]">
-                    <span>Role: Co-Organizer &amp; Industry Liaison</span>
-                    <i data-lucide="external-link" className="w-4 h-4 text-[#E8483C]"></i>
-                  </div>
-                </div>
-
+            </div>
+            
+            {/* Edge-to-edge Marquee */}
+            <div className="marquee-container flex overflow-hidden w-full relative py-8 mt-4">
+              <div className="marquee-content flex shrink-0 w-max items-center justify-around gap-8 pr-8">
+                {clubLogos.map((logo, index) => (
+                  <img key={`logo-1-${index}`} src={logo} alt={`Supporting Club ${index + 1}`} className="h-20 sm:h-28 w-auto object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform" />
+                ))}
+                {clubLogos.map((logo, index) => (
+                  <img key={`logo-2-${index}`} src={logo} alt={`Supporting Club ${index + 1}`} className="h-20 sm:h-28 w-auto object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform" />
+                ))}
               </div>
-
             </div>
           </section>
 
