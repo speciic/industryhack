@@ -320,7 +320,7 @@ export default function App() {
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-5 sm:mb-6 text-xs font-mono hero-spacing-md">
             <div className="flex items-center gap-2 px-3.5 py-2 bg-[#123A63] border border-[#EAF2FA]/30 rounded-full text-[#FFFFFF]">
               <Calendar className="w-3.5 h-3.5 text-[#E8483C]" />
-              <span>1st–2nd August 2026</span>
+              <span>22nd–23rd August 2026</span>
             </div>
             <div className="flex items-center gap-2 px-3.5 py-2 bg-[#123A63] border border-[#EAF2FA]/30 rounded-full text-[#FFFFFF]">
               <MapPin className="w-3.5 h-3.5 text-[#FFB800]" />
@@ -399,10 +399,6 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-7">
-              <div className="section-tag">
-                <Brain className="w-3.5 h-3.5" />
-                <span>About The Event</span>
-              </div>
               <h2 className="section-title">
                 Bridging Academic Innovation With Real-World Industry Needs
               </h2>
@@ -564,10 +560,6 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="section-tag mx-auto">
-              <Building2 className="w-3.5 h-3.5" />
-              <span>Core Mission</span>
-            </div>
             <h2 className="section-title">Event Objectives</h2>
             <p className="section-subtitle mx-auto">
               Constructed to cultivate technical rigor, real-world execution, and collaborative engineering excellence.
@@ -636,10 +628,6 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="section-tag mx-auto">
-              <Layers className="w-3.5 h-3.5" />
-              <span>3-Stage Sequence</span>
-            </div>
             <h2 className="section-title">Hackathon Progression Structure</h2>
             <p className="section-subtitle mx-auto">
               A rigorous 3-stage evaluation framework designed to test raw algorithmic execution, architectural ideation, and full-stack building.
@@ -730,7 +718,7 @@ export default function App() {
 
                   <h2 className="section-title">Event Timeline</h2>
                   <p className="section-subtitle mx-auto">
-                    Explore the complete 24-hour roadmap across August 1st and August 2nd, 2026. Hover or click any stage node to view full details.
+                    Explore the complete 24-hour roadmap across August 22nd and August 23rd, 2026. Hover or click any stage node to view full details.
                   </p>
                 </div>
 
@@ -748,7 +736,7 @@ export default function App() {
                     }`}
                   >
                     <Calendar className="w-4 h-4" />
-                    <span>DAY 1 — 1ST AUG (8 STAGES)</span>
+                    <span>DAY 1 — 22ND AUG (8 STAGES)</span>
                   </button>
 
                   <button
@@ -763,7 +751,7 @@ export default function App() {
                     }`}
                   >
                     <Calendar className="w-4 h-4" />
-                    <span>DAY 2 — 2ND AUG (5 STAGES)</span>
+                    <span>DAY 2 — 23RD AUG (5 STAGES)</span>
                   </button>
                 </div>
 
@@ -947,7 +935,7 @@ export default function App() {
                 <CheckCircle2 className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-1">Day 1 Lunch &amp; Dinner</h3>
-              <p className="text-xs text-[#9FB8D4]">Full buffet lunch and dinner provided on August 1st at campus dining halls.</p>
+              <p className="text-xs text-[#9FB8D4]">Full buffet lunch and dinner provided on August 22nd at campus dining halls.</p>
             </div>
 
             <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
@@ -955,7 +943,7 @@ export default function App() {
                 <Coffee className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold font-display text-white mb-1">Day 2 Breakfast</h3>
-              <p className="text-xs text-[#9FB8D4]">Hot breakfast served on the morning of August 2nd prior to final project presentations.</p>
+              <p className="text-xs text-[#9FB8D4]">Hot breakfast served on the morning of August 23rd prior to final project presentations.</p>
             </div>
 
             <div className="p-6 bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl">
@@ -1283,7 +1271,7 @@ export default function App() {
               },
               {
                 q: "When will the problem statements be released?",
-                a: "Problem statements authored by our industry partners will be unveiled during the Inauguration Ceremony on Day 1 (August 1, 2026)."
+                a: "Problem statements authored by our industry partners will be unveiled during the Inauguration Ceremony on Day 1 (August 22, 2026)."
               }
             ].map((faq, index) => (
               <div key={index} className="bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl overflow-hidden">
@@ -1322,7 +1310,7 @@ export default function App() {
               </p>
               
               <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-[#9FB8D4]">
-                <span>📅 1st–2nd August 2026</span>
+                <span>📅 22nd–23rd August 2026</span>
                 <span>📍 St. Peter&apos;s Engineering College</span>
                 <span>💰 ₹1,00,000 Prize Pool</span>
               </div>
