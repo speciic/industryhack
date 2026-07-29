@@ -46,7 +46,7 @@ body {
   overflow-x: hidden;
   background-color: var(--bg-blueprint);
   color: var(--text-dim);
-  padding-top: 5.5rem; /* Offset for floating fixed nav */
+  padding-top: 0;
 }
 
 section[id] {
