@@ -484,10 +484,7 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="section-tag mx-auto">
-              <Layers className="w-3.5 h-3.5" />
-              <span>Track Domains</span>
-            </div>
+
             <h2 className="section-title">Themes</h2>
             <p className="section-subtitle mx-auto">
               Explore the core technical tracks designed around active industry friction points and emerging AI frontiers.
@@ -733,10 +730,7 @@ export default function App() {
             return (
               <>
                 <div className="text-center max-w-3xl mx-auto mb-10">
-                  <div className="section-tag mx-auto">
-                    <Clock className="w-3.5 h-3.5" />
-                    <span>24-Hour Interactive Timeline</span>
-                  </div>
+
                   <h2 className="section-title">Event Timeline</h2>
                   <p className="section-subtitle mx-auto">
                     Explore the complete 24-hour roadmap across August 1st and August 2nd, 2026. Hover or click any stage node to view full details.
@@ -934,10 +928,7 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="section-tag mx-auto">
-              <Zap className="w-3.5 h-3.5" />
-              <span>Participant Experience</span>
-            </div>
+
             <h2 className="section-title">Facilities Provided</h2>
             <p className="section-subtitle mx-auto">
               We ensure all infrastructure and dietary needs are taken care of so teams can remain focused on building.
@@ -1012,10 +1003,7 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="section-tag mx-auto">
-              <Trophy className="w-3.5 h-3.5" />
-              <span>Rewards &amp; Impact</span>
-            </div>
+
             <h2 className="section-title">Prizes &amp; Opportunities</h2>
             <p className="section-subtitle mx-auto">
               Substantial financial rewards, API credits, and direct career acceleration pathways for top teams.
@@ -1031,9 +1019,7 @@ export default function App() {
                 <span>OFFICIAL CASH PRIZE</span>
               </span>
 
-              <span className="rubber-stamp border-[#E8483C] text-[#E8483C] text-[10px] py-1 px-2.5 rounded-lg">
-                PRIMARY REWARD // APPROVED
-              </span>
+
             </div>
 
             <div className="text-left max-w-3xl">
@@ -1119,10 +1105,7 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="section-tag mx-auto">
-              <Building2 className="w-3.5 h-3.5" />
-              <span>Corporate Collaboration</span>
-            </div>
+
             <h2 className="section-title">Industry Partners</h2>
             <p className="section-subtitle mx-auto">
               Collaborating software enterprises providing real-world problem statements, mentorship, and career opportunities.
@@ -1171,10 +1154,7 @@ export default function App() {
         <div className="container">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="section-tag mx-auto">
-              <Users className="w-3.5 h-3.5" />
-              <span>Campus Chapters</span>
-            </div>
+
             <h2 className="section-title">Supporting Clubs &amp; Chapters</h2>
             <p className="section-subtitle mx-auto">
               Student organizations spearheading community outreach, technical workshops, and event execution.
