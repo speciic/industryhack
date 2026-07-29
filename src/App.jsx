@@ -287,7 +287,7 @@ export default function App() {
       </header>
 
       {/* 2. HERO SECTION */}
-      <section className="relative pt-20 sm:pt-24 md:pt-24 pb-8 sm:pb-12 md:pb-16 border-b border-[#EAF2FA]/20 overflow-hidden hero-compact">
+      <section className="relative pt-28 sm:pt-32 pb-16 md:pb-20 border-b border-[#EAF2FA]/20 overflow-hidden">
         <div className="container relative z-10">
           
 
