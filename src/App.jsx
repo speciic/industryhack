@@ -34,7 +34,7 @@ import {
   Youtube
 } from 'lucide-react';
 
-const FORM_LINK = "https://forms.gle/REPLACE_WITH_ACTUAL_FORM_LINK";
+const FORM_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSfy5-SALibn0Xa3l5RTMQTzYIud0cwCjErzYoWAA9aUbto6eQ/viewform?usp=publish-editor";
 
 function ParticleBackground() {
   React.useEffect(() => {
@@ -210,12 +210,12 @@ export default function App() {
       <ParticleBackground />
 
       {/* 1. FLOATING FIXED GLASSMORPHISM NAV BAR */}
-      <header className="fixed top-6 sm:top-7 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1240px] nav-glassmorphism rounded-full transition-all duration-300">
-        <div className="px-6 sm:px-8 flex items-center h-12 md:h-14">
+      <header className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-[1240px] nav-glassmorphism rounded-full transition-all duration-300">
+        <div className="px-4 sm:px-6 md:px-8 flex items-center h-12 md:h-14">
           
           {/* Logo Mark (Left aligned) */}
           <div className="flex-1 flex justify-start">
-            <a href="#" className="flex items-center gap-3 text-white font-display font-bold text-xs md:text-sm tracking-tight no-underline group">
+            <a href="#" className="flex items-center gap-2.5 sm:gap-3 text-white font-display font-bold text-xs md:text-sm tracking-tight no-underline group">
               <div className="w-7 h-7 md:w-8 md:h-8 bg-[#123A63]/80 border border-[#EAF2FA]/30 group-hover:border-[#FFB800] flex items-center justify-center rounded-none text-[#FFB800] font-mono font-bold transition-colors">
                 SIH
               </div>
@@ -227,7 +227,7 @@ export default function App() {
           </div>
 
           {/* Desktop Nav Links (Centered in the middle of navbar) */}
-          <nav className="hidden lg:flex items-center justify-center gap-6 font-display text-[10px] md:text-[11px] font-bold tracking-widest uppercase">
+          <nav className="hidden lg:flex items-center justify-center gap-3 xl:gap-6 font-display text-[10px] xl:text-[11px] font-bold tracking-wider xl:tracking-widest uppercase">
             <a href="#about" className="text-[#9FB8D4] hover:text-white transition-colors no-underline">About</a>
             <a href="#themes" className="text-[#9FB8D4] hover:text-white transition-colors no-underline">Themes</a>
             <a href="#structure" className="text-[#9FB8D4] hover:text-white transition-colors no-underline">Structure</a>
@@ -1367,7 +1367,13 @@ export default function App() {
               <a href="#" aria-label="Instagram" className="w-9 h-9 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center hover:text-[#FFB800] hover:border-[#FFB800] transition-colors">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="#" aria-label="LinkedIn" className="w-9 h-9 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center hover:text-[#FFB800] hover:border-[#FFB800] transition-colors">
+              <a
+                href="https://www.linkedin.com/in/specindustryhack"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-9 h-9 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center hover:text-[#FFB800] hover:border-[#FFB800] transition-colors"
+              >
                 <Linkedin className="w-4 h-4" />
               </a>
               <a href="#" aria-label="Twitter / X" className="w-9 h-9 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none flex items-center justify-center hover:text-[#FFB800] hover:border-[#FFB800] transition-colors">

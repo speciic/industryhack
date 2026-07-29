@@ -49,6 +49,10 @@ body {
   padding-top: 5.5rem; /* Offset for floating fixed nav */
 }
 
+section[id] {
+  scroll-margin-top: 6.5rem;
+}
+
 /* Blueprint Graph Paper Background Grid (Fine Hairline Grid) */
 .bg-blueprint-grid {
   background-color: var(--bg-blueprint);
