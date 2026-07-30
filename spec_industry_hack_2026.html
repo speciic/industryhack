@@ -1281,38 +1281,28 @@
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
-                
-                <div className="h-28 bg-[#123A63] border border-[#FFB800] rounded-none p-4 flex flex-col items-center justify-center text-center group hover:bg-[#164373] transition-colors">
-                  <div className="font-display font-extrabold text-white text-sm tracking-widest group-hover:text-[#FFB800] transition-colors">
-                    SPECTRUM CIRCLE
-                  </div>
-                  <span className="text-[9px] font-mono text-[#FFB800] mt-1.5 px-2 py-0.5 bg-[#091C33] border border-[#FFB800]">
-                    CONFIRMED PARTNER
-                  </span>
-                </div>
-
-                <div className="h-28 bg-[#123A63] border border-[#E8483C] rounded-none p-4 flex flex-col items-center justify-center text-center group hover:bg-[#164373] transition-colors">
-                  <div className="font-display font-extrabold text-white text-sm tracking-widest group-hover:text-[#E8483C] transition-colors">
-                    TalentFarm.ai
-                  </div>
-                  <span className="text-[9px] font-mono text-[#E8483C] mt-1.5 px-2 py-0.5 bg-[#091C33] border border-[#E8483C]">
-                    CONFIRMED PARTNER
-                  </span>
-                </div>
-
-                {Array.from({ length: 13 }).map((_, idx) => (
-                  <div key={idx} className="h-28 bg-[#123A63] border border-[#EAF2FA]/20 rounded-none p-4 flex flex-col items-center justify-center text-center">
-                    <i data-lucide="building-2" className="w-5 h-5 text-[#6B8BAE] mb-2"></i>
-                    <span className="text-[11px] font-mono text-[#9FB8D4]">Slot #{idx + 3}</span>
-                    <span className="text-[9px] font-mono text-[#6B8BAE] mt-1">Logo Coming Soon</span>
+              <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8">
+                {[
+                  "Spectrum Circle & Unity Circle",
+                  "RivicQ Germany",
+                  "International Startup Foundation",
+                  "Perfect Corp. & YouCam API",
+                  "Kodryx AI & Cliqin Health",
+                  "iRobotix Technologies",
+                  "HackBoats",
+                  "GrowAthlete",
+                  "Kaynos Technologies",
+                  "Founders Lab",
+                  "Infinitron AI",
+                  "IMS",
+                  "Skyde Solutions"
+                ].map((company, idx) => (
+                  <div key={idx} className="w-[45%] sm:w-[30%] md:w-[22%] lg:w-[18%] h-20 sm:h-24 bg-[#123A63]/60 backdrop-blur border border-[#EAF2FA]/20 rounded-2xl p-3 flex flex-col items-center justify-center text-center group hover:bg-[#164373] hover:border-[#FFB800]/60 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(255,184,0,0.15)] transition-all duration-300">
+                    <div className="font-display font-bold text-white text-[11px] sm:text-[13px] leading-snug tracking-wider group-hover:text-[#FFB800] transition-colors uppercase">
+                      {company}
+                    </div>
                   </div>
                 ))}
-
-              </div>
-
-              <div className="text-center text-xs font-mono text-[#9FB8D4]">
-                <span className="text-[#FFB800] font-bold">+ 4 additional prominent software companies</span> to be announced prior to event launch.
               </div>
 
             </div>
