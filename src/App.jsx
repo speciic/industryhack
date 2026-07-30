@@ -1340,12 +1340,7 @@ export default function App() {
               >
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="#" aria-label="Twitter / X" className="w-9 h-9 bg-[#123A63] border border-[#EAF2FA]/30 rounded-full flex items-center justify-center hover:text-[#FFB800] hover:border-[#FFB800] transition-colors">
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a href="#" aria-label="YouTube" className="w-9 h-9 bg-[#123A63] border border-[#EAF2FA]/30 rounded-full flex items-center justify-center hover:text-[#FFB800] hover:border-[#FFB800] transition-colors">
-                <Youtube className="w-4 h-4" />
-              </a>
+
             </div>
 
           </div>
