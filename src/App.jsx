@@ -1161,10 +1161,10 @@ export default function App() {
         <div className="marquee-container flex overflow-hidden w-full relative py-8 mt-4">
           <div className="marquee-content flex shrink-0 w-max items-center justify-around gap-8 pr-8">
             {clubLogos.map((logo, index) => (
-              <img key={`logo-1-${index}`} src={logo} alt={`Supporting Club ${index + 1}`} className="h-20 sm:h-28 w-auto object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform" />
+              <img key={`logo-1-${index}`} src={logo} alt={`Supporting Club ${index + 1}`} loading="lazy" className="h-20 sm:h-28 w-auto object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform" />
             ))}
             {clubLogos.map((logo, index) => (
-              <img key={`logo-2-${index}`} src={logo} alt={`Supporting Club ${index + 1}`} className="h-20 sm:h-28 w-auto object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform" />
+              <img key={`logo-2-${index}`} src={logo} alt={`Supporting Club ${index + 1}`} loading="lazy" className="h-20 sm:h-28 w-auto object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform" />
             ))}
           </div>
         </div>
