@@ -94,122 +94,185 @@ const TIMELINE_DATA = {
   1: [
     {
       time: "09:00 AM – 10:00 AM",
-      title: "Participant Registration & Kit Distribution",
-      desc: "Check-in, identity verification, and allocation of team workspaces and hackathon kits.",
-      badge: "CHECK-IN",
+      title: "Registration",
+      desc: "Participant registration and kit distribution.",
+      badge: "REGISTRATION",
       IconComponent: Users,
       highlightType: "standard",
       badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
     },
     {
       time: "10:00 AM – 11:00 AM",
-      title: "Inauguration Ceremony & Guest Keynote",
-      desc: "Opening remarks by St. Peter's Engineering leadership and industry partner addresses.",
+      title: "Inauguration & Expert Talk",
+      desc: "Opening ceremony and expert talks.",
       badge: "CEREMONY",
       IconComponent: Sparkles,
       highlightType: "standard",
       badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
     },
     {
-      time: "11:00 AM – 01:30 PM",
-      title: "Level 1 — Code Sprint",
-      desc: "Timed coding competition testing algorithm efficiency and test-case resolution.",
-      badge: "LEVEL 1 SPRINT",
+      time: "11:00 AM – 01:00 PM",
+      title: "Level 1 — Coding Sprint",
+      desc: "Timed coding competition testing algorithm efficiency.",
+      badge: "CODE SPRINT",
       IconComponent: Code2,
       highlightType: "gold",
       badgeStyle: "bg-[#091C33] border border-[#FFB800] text-[#FFB800] font-bold"
     },
     {
-      time: "01:30 PM – 02:30 PM",
-      title: "Lunch Break & Networking",
-      desc: "Complimentary buffet lunch provided for all registered participants.",
+      time: "01:00 PM",
+      title: "Level 1 Submission",
+      desc: "Submission deadline for Level 1.",
+      badge: "SUBMISSION",
+      IconComponent: Terminal,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
+    },
+    {
+      time: "01:00 PM – 02:00 PM",
+      title: "Lunch Break",
+      desc: "Lunch break for participants.",
       badge: "MEAL BREAK",
       IconComponent: Coffee,
       highlightType: "standard",
       badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
     },
     {
-      time: "02:30 PM – 06:30 PM",
+      time: "02:00 PM – 05:30 PM",
       title: "Level 2 — Innovate",
-      desc: "Teams formulate architectural frameworks for industry problem statements.",
-      badge: "LEVEL 2 DESIGN",
+      desc: "Teams formulate architectural frameworks and innovate.",
+      badge: "INNOVATE",
       IconComponent: Brain,
       highlightType: "gold",
       badgeStyle: "bg-[#091C33] border border-[#FFB800] text-[#FFB800] font-bold"
     },
     {
-      time: "06:30 PM – 07:30 PM",
-      title: "Presentation of Innovative Solutions",
-      desc: "Pitching Level 2 designs for shortlist evaluation into Level 3.",
-      badge: "EVALUATION",
-      IconComponent: Layers,
+      time: "02:00 PM – 02:30 PM",
+      title: "Expert Talk",
+      desc: "Industry expert talk session.",
+      badge: "EXPERT TALK",
+      IconComponent: Users,
       highlightType: "standard",
       badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
     },
     {
-      time: "07:30 PM – 08:30 PM",
-      title: "Dinner & DJ Engagement Session",
-      desc: "Dinner break and high-energy music session to recharge participants for the night sprint.",
-      badge: "MEAL & MUSIC",
-      IconComponent: Music,
+      time: "05:30 PM",
+      title: "Level 2 Submission",
+      desc: "Submission deadline for Level 2.",
+      badge: "SUBMISSION",
+      IconComponent: Terminal,
       highlightType: "standard",
-      badgeStyle: "bg-[#091C33] border border-[#E8483C]/50 text-[#E8483C]"
+      badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
     },
     {
-      time: "08:30 PM Onwards",
-      title: "Level 3 — BuildX Begins (Overnight Prototype Build)",
-      desc: "Shortlisted teams start building working models and software prototypes.",
-      badge: "LEVEL 3 BUILD",
+      time: "05:30 PM – 06:00 PM",
+      title: "Break",
+      desc: "Short break before the next level.",
+      badge: "BREAK",
+      IconComponent: Coffee,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
+    },
+    {
+      time: "06:00 PM – 10:00 PM",
+      title: "Level 3 — BuildX",
+      desc: "Teams start building working models and software prototypes.",
+      badge: "BUILD X",
       IconComponent: Rocket,
       highlightType: "red",
       badgeStyle: "bg-[#E8483C] text-white font-bold"
+    },
+    {
+      time: "06:00 PM – 06:30 PM",
+      title: "Expert Talk",
+      desc: "Industry expert talk session.",
+      badge: "EXPERT TALK",
+      IconComponent: Users,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
+    },
+    {
+      time: "09:00 PM – 10:00 PM",
+      title: "Running Dinner",
+      desc: "Dinner provided at workstations.",
+      badge: "DINNER",
+      IconComponent: Coffee,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
+    },
+    {
+      time: "10:00 PM",
+      title: "Level 3 Submission",
+      desc: "Submission deadline for Level 3.",
+      badge: "SUBMISSION",
+      IconComponent: Terminal,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
+    },
+    {
+      time: "10:00 PM – 11:00 PM",
+      title: "Live Music, DJ & Campfire Jamming",
+      desc: "High-energy music and campfire session.",
+      badge: "MUSIC",
+      IconComponent: Music,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#E8483C]/50 text-[#E8483C]"
     }
   ],
   2: [
     {
-      time: "01:00 AM",
-      title: "Late-Night Coffee Break & Music",
-      desc: "Fresh brewed coffee served continuously at hackathon workstations.",
-      badge: "MIDNIGHT RECHARGE",
-      IconComponent: Coffee,
-      highlightType: "standard",
-      badgeStyle: "bg-[#091C33] border border-[#FFB800]/50 text-[#FFB800]"
+      time: "11:00 PM – 05:00 AM",
+      title: "Level 4 — Overnight Build",
+      desc: "Overnight prototype build.",
+      badge: "OVERNIGHT BUILD",
+      IconComponent: Rocket,
+      highlightType: "red",
+      badgeStyle: "bg-[#E8483C] text-white font-bold"
     },
     {
-      time: "05:30 AM",
-      title: "Wake-Up Music & Morning Coffee Break",
-      desc: "Energizing track list and morning coffee station open.",
-      badge: "MORNING RECHARGE",
-      IconComponent: Music,
-      highlightType: "standard",
-      badgeStyle: "bg-[#091C33] border border-[#FFB800]/50 text-[#FFB800]"
-    },
-    {
-      time: "07:30 AM – 08:00 AM",
-      title: "Fresh-Up Time & Breakfast",
-      desc: "Fresh-up facilities available followed by hot breakfast for all teams.",
-      badge: "BREAKFAST",
-      IconComponent: Coffee,
+      time: "12:00 AM",
+      title: "Expert Talks",
+      desc: "Midnight expert talk session.",
+      badge: "EXPERT TALK",
+      IconComponent: Users,
       highlightType: "standard",
       badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
     },
     {
-      time: "08:00 AM – 10:00 AM",
-      title: "Final Project Submission & Jury Demonstrations",
-      desc: "Repositories frozen; teams present live working prototypes to industry judges.",
-      badge: "JURY DEMO",
+      time: "05:00 AM",
+      title: "Level 4 Submission",
+      desc: "Submission deadline for Level 4.",
+      badge: "SUBMISSION",
       IconComponent: Terminal,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
+    },
+    {
+      time: "06:00 AM – 09:00 AM",
+      title: "Final Presentation — Running Breakfast",
+      desc: "Teams present live working prototypes to industry judges with breakfast.",
+      badge: "PRESENTATION",
+      IconComponent: Layers,
       highlightType: "gold",
       badgeStyle: "bg-[#091C33] border border-[#FFB800] text-[#FFB800] font-bold"
     },
     {
-      time: "10:00 AM – 11:00 AM",
-      title: "Valedictory Ceremony & Prize Distribution",
-      desc: "Announcement of ₹1,00,000 cash winners, internship offers, and closing address.",
+      time: "09:00 AM – 10:00 AM",
+      title: "Evaluation",
+      desc: "Final evaluation by the jury.",
+      badge: "EVALUATION",
+      IconComponent: Brain,
+      highlightType: "standard",
+      badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
+    },
+    {
+      time: "10:00 AM",
+      title: "Valedictory & Prize Distribution",
+      desc: "Announcement of winners and prize distribution.",
       badge: "VALEDICTORY",
       IconComponent: Trophy,
-      highlightType: "red",
-      badgeStyle: "bg-[#E8483C] text-white font-bold"
+      highlightType: "gold",
+      badgeStyle: "bg-[#091C33] border border-[#FFB800] text-[#FFB800] font-bold"
     }
   ]
 };
