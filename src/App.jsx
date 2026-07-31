@@ -425,14 +425,14 @@ export default function App() {
                 <strong className="text-white">SPEC INDUSTRY HACK 2026</strong> is a premier 24-hour national hackathon designed to unite over <strong>1,000 young engineering minds</strong> from colleges across India. Our mission is to move beyond conventional theoretical exercises and tackle genuine, industry-sourced problems.
               </p>
               <p className="text-base text-[#9FB8D4] mb-8 leading-relaxed">
-                Participants collaborate in teams of 2 to 4 to engineer functional code, build autonomous AI agents, and prototype full-stack systems under strict time constraints — backed by continuous mentorship from engineering leaders and industry partners.
+                Participants collaborate in teams of 1 to 3 to engineer functional code, build autonomous AI agents, and prototype full-stack systems under strict time constraints — backed by continuous mentorship from engineering leaders and industry partners.
               </p>
 
               {/* Fast Fact Badges */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
                   <div className="text-[11px] font-mono text-[#E8483C] uppercase tracking-wider mb-1">[SPEC 01] Team Size</div>
-                  <div className="text-base font-bold font-display text-white">2 to 4 Members</div>
+                  <div className="text-base font-bold font-display text-white">1 to 3 Members</div>
                 </div>
                 <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
                   <div className="text-[11px] font-mono text-[#FFB800] uppercase tracking-wider mb-1">[SPEC 02] Registration Fee</div>
@@ -1236,7 +1236,7 @@ export default function App() {
             {[
               {
                 q: "What is the team size requirement?",
-                a: "Teams must consist of 2 to 4 members. Individual registrations are not allowed, but team formation channels are available on our official community group."
+                a: "Teams must consist of 1 to 3 members. Individual registrations are welcome, and team formation channels are also available on our official community group."
               },
               {
                 q: "What is the registration fee and how is it paid?",
