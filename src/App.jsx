@@ -431,15 +431,15 @@ export default function App() {
               {/* Fast Fact Badges */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-                  <div className="text-[11px] font-mono text-[#E8483C] uppercase tracking-wider mb-1">[SPEC 01] Team Size</div>
+                  <div className="text-[11px] font-mono text-[#E8483C] uppercase tracking-wider mb-1">Team Size</div>
                   <div className="text-base font-bold font-display text-white">1 to 3 Members</div>
                 </div>
                 <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-                  <div className="text-[11px] font-mono text-[#FFB800] uppercase tracking-wider mb-1">[SPEC 02] Registration Fee</div>
+                  <div className="text-[11px] font-mono text-[#FFB800] uppercase tracking-wider mb-1">Registration Fee</div>
                   <div className="text-base font-bold font-display text-white">₹300 / Participant</div>
                 </div>
                 <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none">
-                  <div className="text-[11px] font-mono text-[#9FB8D4] uppercase tracking-wider mb-1">[SPEC 03] Scope</div>
+                  <div className="text-[11px] font-mono text-[#9FB8D4] uppercase tracking-wider mb-1">Scope</div>
                   <div className="text-base font-bold font-display text-white">Pan-India Colleges</div>
                 </div>
               </div>
@@ -508,7 +508,7 @@ export default function App() {
             <div className="tech-card flex flex-col justify-between">
               <div>
                 <div className="inline-flex items-center justify-center px-3.5 py-1.5 bg-[#091C33] border border-[#FFB800] rounded-xl text-[#FFB800] mb-6 font-mono font-bold text-xs whitespace-nowrap shadow-sm">
-                  [DOM-01]
+                  [DOMAIN-01]
                 </div>
                 <div className="flex items-center gap-2 mb-3">
                   <Brain className="w-5 h-5 text-[#FFB800]" />
@@ -528,7 +528,7 @@ export default function App() {
             <div className="tech-card flex flex-col justify-between border-[#E8483C]/50">
               <div>
                 <div className="inline-flex items-center justify-center px-3.5 py-1.5 bg-[#091C33] border border-[#E8483C] rounded-xl text-[#E8483C] mb-6 font-mono font-bold text-xs whitespace-nowrap shadow-sm">
-                  [DOM-02]
+                  [DOMAIN-02]
                 </div>
                 <div className="flex items-center gap-2 mb-3">
                   <Sparkles className="w-5 h-5 text-[#E8483C]" />
@@ -548,7 +548,7 @@ export default function App() {
             <div className="tech-card flex flex-col justify-between">
               <div>
                 <div className="inline-flex items-center justify-center px-3.5 py-1.5 bg-[#091C33] border border-[#FFB800] rounded-xl text-[#FFB800] mb-6 font-mono font-bold text-xs whitespace-nowrap shadow-sm">
-                  [DOM-03]
+                  [DOMAIN-03]
                 </div>
                 <div className="flex items-center gap-2 mb-3">
                   <Code2 className="w-5 h-5 text-[#FFB800]" />
