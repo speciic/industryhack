@@ -115,18 +115,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
-.blueprint-title-block::before {
-  content: 'FIG. SPEC-2026';
-  position: absolute;
-  top: -10px;
-  right: 12px;
-  background-color: var(--bg-blueprint);
-  padding: 0 6px;
-  font-size: 0.65rem;
-  color: var(--accent-signal);
-  border: 1px solid var(--accent-signal);
-  letter-spacing: 0.1em;
-}
+
 
 /* Signature Register Now CTA (Safety Yellow + Curved Pill Format) */
 .btn-illuminated {

@@ -448,10 +448,7 @@ export default function App() {
             {/* Technical Blueprint Title-Block Info Box */}
             <div className="lg:col-span-5">
               <div className="blueprint-title-block space-y-3">
-                <div className="border-b border-[#EAF2FA]/30 pb-3 mb-3 flex items-center justify-between">
-                  <span className="font-bold text-white tracking-wider uppercase">TITLE BLOCK // DWG-2026</span>
-                  <span className="text-[10px] text-[#E8483C] font-bold px-2 py-0.5 border border-[#E8483C]">REV 1.0</span>
-                </div>
+
 
                 <div className="space-y-2 text-xs">
                   <div className="flex justify-between border-b border-[#EAF2FA]/15 py-1">
