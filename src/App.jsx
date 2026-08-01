@@ -262,8 +262,8 @@ const TIMELINE_DATA = {
       desc: "Final evaluation by the jury.",
       badge: "EVALUATION",
       IconComponent: Brain,
-      highlightType: "green",
-      badgeStyle: "bg-[#091C33] border border-[#22C55E] text-[#22C55E] font-bold"
+      highlightType: "gold",
+      badgeStyle: "bg-[#091C33] border border-[#FFB800] text-[#FFB800] font-bold"
     },
     {
       time: "10:00 AM",
@@ -271,8 +271,8 @@ const TIMELINE_DATA = {
       desc: "Announcement of winners and prize distribution.",
       badge: "VALEDICTORY",
       IconComponent: Trophy,
-      highlightType: "gold",
-      badgeStyle: "bg-[#091C33] border border-[#FFB800] text-[#FFB800] font-bold"
+      highlightType: "green",
+      badgeStyle: "bg-[#091C33] border border-[#22C55E] text-[#22C55E] font-bold"
     }
   ]
 };
