@@ -1025,12 +1025,12 @@ export default function App() {
 
                     {/* Connected Stem Line & Scrollable Track */}
                     <div className="relative my-4 px-1 sm:px-4 overflow-x-auto scrollbar-none pb-4">
-                      <div className="min-w-[620px] sm:min-w-0 relative py-2">
-                        <div className="absolute top-1/2 left-4 right-4 h-1.5 -translate-y-1/2 rounded-full overflow-hidden z-0 bg-[#EAF2FA]/30">
+                      <div className="w-max min-w-full relative py-2 px-2">
+                        <div className="absolute top-1/2 left-6 right-6 h-1.5 -translate-y-1/2 rounded-full overflow-hidden z-0 bg-[#EAF2FA]/30">
                           <div className="absolute top-0 left-0 h-full bg-[#FFB800] transition-all duration-700 shadow-[0_0_12px_rgba(255,184,0,0.6)]" style={{ width: `${Math.max(0, Math.min(100, getLiveProgress()))}%` }} />
                         </div>
 
-                        <div className="relative z-10 flex items-center justify-between gap-1 sm:gap-2">
+                        <div className="relative z-10 flex items-center justify-between gap-4 sm:gap-8">
                           {currentEvents.map((ev, idx) => {
                             const isSelected = safeIdx === idx;
                             const eventTime = parseEventTime(ev.time, activeTimelineDay);
