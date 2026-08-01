@@ -31,7 +31,11 @@ import {
   Instagram,
   Linkedin,
   Twitter,
-  Youtube
+  Youtube,
+  BookOpen,
+  Link,
+  Leaf,
+  Landmark
 } from 'lucide-react';
 
 import logo1 from '../assets/1.png';
@@ -331,6 +335,27 @@ export default function App() {
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const getLiveProgress = () => {
+    const events = TIMELINE_DATA[activeTimelineDay];
+    if (!events || events.length < 2) return 0;
+    const firstTime = parseEventTime(events[0].time, activeTimelineDay);
+    const lastTime = parseEventTime(events[events.length - 1].time, activeTimelineDay);
+    
+    if (currentTime <= firstTime) return 0;
+    if (currentTime >= lastTime) return 100;
+    
+    for (let i = 0; i < events.length - 1; i++) {
+      const t1 = parseEventTime(events[i].time, activeTimelineDay);
+      let t2 = parseEventTime(events[i+1].time, activeTimelineDay);
+      if (t2 <= t1) t2 = t1 + 60000;
+      if (currentTime >= t1 && currentTime < t2) {
+        const segmentProgress = (currentTime - t1) / (t2 - t1);
+        return ((i + segmentProgress) / (events.length - 1)) * 100;
+      }
+    }
+    return 100;
   };
 
   return (
@@ -671,6 +696,101 @@ export default function App() {
               </div>
             </div>
 
+            <div className="tech-card flex flex-col justify-between border-[#E8483C]/50">
+              <div>
+                <div className="inline-flex items-center justify-center px-3.5 py-1.5 bg-[#091C33] border border-[#E8483C] rounded-xl text-[#E8483C] mb-6 font-mono font-bold text-xs whitespace-nowrap shadow-sm">
+                  [DOMAIN-04]
+                </div>
+                <div className="flex items-center gap-2 mb-3">
+                  <ShieldCheck className="w-5 h-5 text-[#E8483C]" />
+                  <h3 className="text-lg font-bold font-display text-white">Cybersecurity</h3>
+                </div>
+                <p className="text-sm text-[#9FB8D4] leading-relaxed mb-6">
+                  Develop robust security protocols, threat detection systems, and vulnerability assessment tools to protect digital infrastructure against evolving cyber threats.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#EAF2FA]/20 flex flex-wrap gap-2 text-[11px] font-mono">
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Network Security</span>
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Cryptography</span>
+              </div>
+            </div>
+
+            <div className="tech-card flex flex-col justify-between">
+              <div>
+                <div className="inline-flex items-center justify-center px-3.5 py-1.5 bg-[#091C33] border border-[#FFB800] rounded-xl text-[#FFB800] mb-6 font-mono font-bold text-xs whitespace-nowrap shadow-sm">
+                  [DOMAIN-05]
+                </div>
+                <div className="flex items-center gap-2 mb-3">
+                  <Link className="w-5 h-5 text-[#FFB800]" />
+                  <h3 className="text-lg font-bold font-display text-white">Blockchain</h3>
+                </div>
+                <p className="text-sm text-[#9FB8D4] leading-relaxed mb-6">
+                  Design decentralized applications, secure smart contracts, and distributed ledger solutions that ensure transparency, immutability, and trust across transactions.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#EAF2FA]/20 flex flex-wrap gap-2 text-[11px] font-mono">
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Web3</span>
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Smart Contracts</span>
+              </div>
+            </div>
+
+            <div className="tech-card flex flex-col justify-between border-[#E8483C]/50">
+              <div>
+                <div className="inline-flex items-center justify-center px-3.5 py-1.5 bg-[#091C33] border border-[#E8483C] rounded-xl text-[#E8483C] mb-6 font-mono font-bold text-xs whitespace-nowrap shadow-sm">
+                  [DOMAIN-06]
+                </div>
+                <div className="flex items-center gap-2 mb-3">
+                  <Leaf className="w-5 h-5 text-[#E8483C]" />
+                  <h3 className="text-lg font-bold font-display text-white">Agri-Tech</h3>
+                </div>
+                <p className="text-sm text-[#9FB8D4] leading-relaxed mb-6">
+                  Create technological solutions for precision farming, supply chain tracking, and sustainable agriculture practices to maximize yield and resource efficiency.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#EAF2FA]/20 flex flex-wrap gap-2 text-[11px] font-mono">
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Precision Farming</span>
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">IoT Sensors</span>
+              </div>
+            </div>
+
+            <div className="tech-card flex flex-col justify-between">
+              <div>
+                <div className="inline-flex items-center justify-center px-3.5 py-1.5 bg-[#091C33] border border-[#FFB800] rounded-xl text-[#FFB800] mb-6 font-mono font-bold text-xs whitespace-nowrap shadow-sm">
+                  [DOMAIN-07]
+                </div>
+                <div className="flex items-center gap-2 mb-3">
+                  <Landmark className="w-5 h-5 text-[#FFB800]" />
+                  <h3 className="text-lg font-bold font-display text-white">Fin-Tech</h3>
+                </div>
+                <p className="text-sm text-[#9FB8D4] leading-relaxed mb-6">
+                  Innovate digital payment architectures, algorithmic trading models, and financial inclusion tools to democratize access to financial services globally.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#EAF2FA]/20 flex flex-wrap gap-2 text-[11px] font-mono">
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Digital Payments</span>
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Defi</span>
+              </div>
+            </div>
+
+            <div className="tech-card flex flex-col justify-between border-[#E8483C]/50">
+              <div>
+                <div className="inline-flex items-center justify-center px-3.5 py-1.5 bg-[#091C33] border border-[#E8483C] rounded-xl text-[#E8483C] mb-6 font-mono font-bold text-xs whitespace-nowrap shadow-sm">
+                  [DOMAIN-08]
+                </div>
+                <div className="flex items-center gap-2 mb-3">
+                  <BookOpen className="w-5 h-5 text-[#E8483C]" />
+                  <h3 className="text-lg font-bold font-display text-white">Edu-Tech</h3>
+                </div>
+                <p className="text-sm text-[#9FB8D4] leading-relaxed mb-6">
+                  Develop interactive learning platforms, personalized tutoring systems, and accessible educational content delivery mechanisms using AI and gamification.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#EAF2FA]/20 flex flex-wrap gap-2 text-[11px] font-mono">
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">E-Learning</span>
+                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">AI Tutors</span>
+              </div>
+            </div>
+
           </div>
 
           <div className="max-w-2xl mx-auto text-center p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-xl text-xs font-mono text-[#9FB8D4]">
@@ -899,15 +1019,14 @@ export default function App() {
                     <div className="relative my-4 px-1 sm:px-4 overflow-x-auto scrollbar-none pb-4">
                       <div className="min-w-[620px] sm:min-w-0 relative py-2">
                         <div className="absolute top-1/2 left-4 right-4 h-1 -translate-y-1/2 timeline-horiz-stem rounded-full overflow-hidden z-0 bg-[#EAF2FA]/10">
-                          <div className="absolute top-0 left-0 h-full bg-[#FFB800] transition-all duration-700 shadow-[0_0_12px_rgba(255,184,0,0.6)]" style={{ width: `${Math.max(0, Math.min(100, (safeIdx / Math.max(1, currentEvents.length - 1)) * 100))}%` }} />
+                          <div className="absolute top-0 left-0 h-full bg-[#FFB800] transition-all duration-700 shadow-[0_0_12px_rgba(255,184,0,0.6)]" style={{ width: `${Math.max(0, Math.min(100, getLiveProgress()))}%` }} />
                         </div>
 
                         <div className="relative z-10 flex items-center justify-between gap-1 sm:gap-2">
                           {currentEvents.map((ev, idx) => {
                             const isSelected = safeIdx === idx;
-                            // A stage is "completed" if it's strictly before the current auto-progressed index, 
-                            // OR if we evaluate based on strictly real time. We will use the selected index to visualize past/present/future
-                            const isPassed = idx < safeIdx;
+                            const eventTime = parseEventTime(ev.time, activeTimelineDay);
+                            const isPassed = currentTime >= eventTime;
                             const isRed = ev.highlightType === 'red';
                             const isGreen = ev.highlightType === 'green';
                             const isGold = ev.highlightType === 'gold';
