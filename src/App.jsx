@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Zap,
   Clock,
@@ -179,8 +179,8 @@ const TIMELINE_DATA = {
       desc: "Teams start building working models and software prototypes.",
       badge: "BUILD X",
       IconComponent: Rocket,
-      highlightType: "red",
-      badgeStyle: "bg-[#E8483C] text-white font-bold"
+      highlightType: "gold",
+      badgeStyle: "bg-[#091C33] border border-[#FFB800] text-[#FFB800] font-bold"
     },
     {
       time: "06:00 PM – 06:30 PM",
@@ -253,8 +253,8 @@ const TIMELINE_DATA = {
       desc: "Final evaluation by the jury.",
       badge: "EVALUATION",
       IconComponent: Brain,
-      highlightType: "standard",
-      badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
+      highlightType: "green",
+      badgeStyle: "bg-[#091C33] border border-[#22C55E] text-[#22C55E] font-bold"
     },
     {
       time: "10:00 AM",
@@ -268,11 +268,57 @@ const TIMELINE_DATA = {
   ]
 };
 
+const parseEventTime = (timeStr, day) => {
+  const [startPart] = timeStr.split('–').map(s => s.trim());
+  const match = startPart.match(/(\d+):(\d+)\s+(AM|PM)/i);
+  if (!match) return new Date(2026, 7, 22).getTime();
+  let hours = parseInt(match[1], 10);
+  const mins = parseInt(match[2], 10);
+  const ampm = match[3].toUpperCase();
+  if (ampm === 'PM' && hours < 12) hours += 12;
+  if (ampm === 'AM' && hours === 12) hours = 0;
+  
+  const dateDay = (day === 2 && hours >= 18) ? 22 : (day === 1 ? 22 : 23);
+  return new Date(2026, 7, dateDay, hours, mins, 0).getTime();
+};
+
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTimelineDay, setActiveTimelineDay] = useState(1);
   const [selectedStageIndex, setSelectedStageIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState(null);
+  const [currentTime, setCurrentTime] = useState(Date.now());
+  const [autoProgress, setAutoProgress] = useState(true);
+
+  useEffect(() => {
+    const timer = setInterval(() => setCurrentTime(Date.now()), 60000);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!autoProgress) return;
+    
+    // Auto-select the current active stage based on real time
+    let foundDay = 1;
+    let foundIdx = 0;
+    
+    // Default to day 1 stage 0 if before event starts
+    const firstEventTime = parseEventTime(TIMELINE_DATA[1][0].time, 1);
+    if (currentTime >= firstEventTime) {
+      for (const day of [1, 2]) {
+        for (let i = 0; i < TIMELINE_DATA[day].length; i++) {
+          const eventTime = parseEventTime(TIMELINE_DATA[day][i].time, day);
+          if (currentTime >= eventTime) {
+            foundDay = day;
+            foundIdx = i;
+          }
+        }
+      }
+    }
+    
+    setActiveTimelineDay(foundDay);
+    setSelectedStageIndex(foundIdx);
+  }, [currentTime, autoProgress]);
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -798,6 +844,7 @@ export default function App() {
                     onClick={() => {
                       setActiveTimelineDay(1);
                       setSelectedStageIndex(0);
+                      setAutoProgress(false);
                     }}
                     className={`px-6 sm:px-8 py-3 border font-bold transition-all cursor-pointer flex items-center gap-3 rounded-full ${
                       activeTimelineDay === 1
@@ -813,6 +860,7 @@ export default function App() {
                     onClick={() => {
                       setActiveTimelineDay(2);
                       setSelectedStageIndex(0);
+                      setAutoProgress(false);
                     }}
                     className={`px-6 sm:px-8 py-3 border font-bold transition-all cursor-pointer flex items-center gap-3 rounded-full ${
                       activeTimelineDay === 2
@@ -848,25 +896,37 @@ export default function App() {
                         <div className="relative z-10 flex items-center justify-between gap-1 sm:gap-2">
                           {currentEvents.map((ev, idx) => {
                             const isSelected = safeIdx === idx;
-                            const isPassed = idx <= safeIdx;
+                            // A stage is "completed" if it's strictly before the current auto-progressed index, 
+                            // OR if we evaluate based on strictly real time. We will use the selected index to visualize past/present/future
+                            const isPassed = idx < safeIdx;
                             const isRed = ev.highlightType === 'red';
+                            const isGreen = ev.highlightType === 'green';
+                            const isGold = ev.highlightType === 'gold';
                             const IconComp = ev.IconComponent || Clock;
 
                             return (
                               <button
                                 key={idx}
-                                onClick={() => setSelectedStageIndex(idx)}
-                                onMouseEnter={() => setSelectedStageIndex(idx)}
+                                onClick={() => {
+                                  setSelectedStageIndex(idx);
+                                  setAutoProgress(false);
+                                }}
+                                onMouseEnter={() => {
+                                  setSelectedStageIndex(idx);
+                                  setAutoProgress(false);
+                                }}
                                 className="group relative flex flex-col items-center shrink-0 cursor-pointer min-w-[72px] sm:min-w-[95px] focus:outline-none"
                               >
                                 <span className={`font-mono text-[10px] sm:text-[11px] font-bold mb-2 transition-colors ${
                                   isSelected
                                     ? isRed
                                       ? 'text-[#E8483C]'
-                                      : 'text-[#FFB800]'
+                                      : isGreen
+                                      ? 'text-[#22C55E]'
+                                      : 'text-[#FFB800]' // Active is yellow/gold by default
                                     : isPassed
-                                    ? 'text-white'
-                                    : 'text-[#6B8BAE]'
+                                    ? 'text-[#22C55E]' // Completed items are green
+                                    : 'text-[#6B8BAE]' // Future items are dimmed
                                 }`}>
                                   {ev.time.split('–')[0].trim()}
                                 </span>
@@ -875,9 +935,11 @@ export default function App() {
                                   isSelected
                                     ? isRed
                                       ? 'bg-[#E8483C] border-white text-white shadow-[0_0_18px_rgba(232,72,60,0.7)] scale-110'
+                                      : isGreen
+                                      ? 'bg-[#123A63] border-[#22C55E] text-[#22C55E] shadow-[0_0_20px_rgba(34,197,94,0.5)] scale-110'
                                       : 'bg-[#123A63] border-[#FFB800] text-[#FFB800] shadow-[0_0_20px_rgba(255,184,0,0.5)] scale-110'
                                     : isPassed
-                                    ? 'bg-[#091C33] border-[#FFB800]/60 text-[#FFB800] group-hover:border-[#FFB800] group-hover:scale-105'
+                                    ? 'bg-[#091C33] border-[#22C55E]/60 text-[#22C55E] group-hover:border-[#22C55E] group-hover:scale-105'
                                     : 'bg-[#091C33] border-[#EAF2FA]/25 text-[#6B8BAE] group-hover:border-[#FFB800]/60 group-hover:text-white group-hover:scale-105'
                                 }`}>
                                   <IconComp className="w-4 h-4" />
@@ -885,7 +947,11 @@ export default function App() {
 
                                 <span className={`font-mono text-[8px] sm:text-[9px] mt-2 px-2 py-0.5 border rounded-full truncate max-w-[80px] sm:max-w-[95px] text-center uppercase tracking-tighter ${
                                   isSelected
-                                    ? 'bg-[#091C33] border-[#FFB800] text-[#FFB800] font-bold'
+                                    ? isGreen
+                                      ? 'bg-[#091C33] border-[#22C55E] text-[#22C55E] font-bold'
+                                      : 'bg-[#091C33] border-[#FFB800] text-[#FFB800] font-bold'
+                                    : isPassed
+                                    ? 'bg-[#091C33]/60 border-[#22C55E]/40 text-[#22C55E]'
                                     : 'bg-[#091C33]/60 border-transparent text-[#6B8BAE]'
                                 }`}>
                                   {ev.badge}
@@ -906,6 +972,8 @@ export default function App() {
                         ? 'border-[#E8483C] shadow-[0_0_30px_rgba(232,72,60,0.3)]'
                         : activeEvent.highlightType === 'gold'
                         ? 'border-[#FFB800] shadow-[0_0_30px_rgba(255,184,0,0.25)]'
+                        : activeEvent.highlightType === 'green'
+                        ? 'border-[#22C55E] shadow-[0_0_30px_rgba(34,197,94,0.25)]'
                         : 'border-[#EAF2FA]/40'
                     }`}
                   >
