@@ -603,7 +603,7 @@ export default function App() {
                   </div>
                   <div className="flex justify-between border-b border-[#EAF2FA]/15 py-1">
                     <span className="text-[#9FB8D4]">EVALUATION</span>
-                    <span className="text-white font-semibold">3-STAGE LEVEL ELIMINATION</span>
+                    <span className="text-white font-semibold">4-STAGE LEVEL ELIMINATION</span>
                   </div>
                   <div className="flex justify-between py-1">
                     <span className="text-[#9FB8D4]">CASH POOL</span>
