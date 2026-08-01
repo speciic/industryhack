@@ -48,6 +48,7 @@ import logo7 from '../assets/7.png';
 import logo8 from '../assets/8.png';
 import logo9 from '../assets/9.png';
 import logo10 from '../assets/10.png';
+import specSquareLogo from '../assets/SPEC Square white.png';
 import logo11 from '../assets/11.png';
 import logo12 from '../assets/12.png';
 import logo13 from '../assets/13.png';
@@ -1402,10 +1403,10 @@ export default function App() {
         <div className="marquee-container flex overflow-hidden w-full relative py-8 mt-4">
           <div className="marquee-content flex shrink-0 w-max items-center justify-around gap-8 pr-8">
             {clubLogos.map((logo, index) => (
-              <img key={`logo-1-${index}`} src={logo} alt={`Supporting Club ${index + 1}`} loading="lazy" className="h-20 sm:h-28 w-auto object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform" />
+              <img key={`logo-1-${index}`} src={logo} alt={`Supporting Club ${index + 1}`} loading="lazy" decoding="async" className="h-20 sm:h-28 w-auto object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform" />
             ))}
             {clubLogos.map((logo, index) => (
-              <img key={`logo-2-${index}`} src={logo} alt={`Supporting Club ${index + 1}`} loading="lazy" className="h-20 sm:h-28 w-auto object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform" />
+              <img key={`logo-2-${index}`} src={logo} alt={`Supporting Club ${index + 1}`} loading="lazy" decoding="async" className="h-20 sm:h-28 w-auto object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform" />
             ))}
           </div>
         </div>
@@ -1554,6 +1555,10 @@ export default function App() {
               </a>
             </div>
 
+          </div>
+
+          <div className="flex justify-center py-8 border-b border-[#EAF2FA]/10">
+            <img src={specSquareLogo} alt="SPEC Square Logo" className="h-24 sm:h-32 w-auto object-contain opacity-90" />
           </div>
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
