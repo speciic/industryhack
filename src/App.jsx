@@ -208,6 +208,15 @@ const TIMELINE_DATA = {
       IconComponent: Terminal,
       highlightType: "standard",
       badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
+    },
+    {
+      time: "10:30 PM – 11:30 PM",
+      title: "LIVE MUSIC",
+      desc: "High-energy live music session.",
+      badge: "MUSIC",
+      IconComponent: Music,
+      highlightType: "gold",
+      badgeStyle: "bg-[#091C33] border border-[#FFB800] text-[#FFB800] font-bold"
     }
   ],
   2: [
@@ -217,8 +226,8 @@ const TIMELINE_DATA = {
       desc: "Overnight prototype build.",
       badge: "OVERNIGHT BUILD",
       IconComponent: Rocket,
-      highlightType: "red",
-      badgeStyle: "bg-[#E8483C] text-white font-bold"
+      highlightType: "gold",
+      badgeStyle: "bg-[#091C33] border border-[#FFB800] text-[#FFB800] font-bold"
     },
     {
       time: "12:00 AM",
@@ -853,7 +862,7 @@ export default function App() {
                     }`}
                   >
                     <Calendar className="w-4 h-4" />
-                    <span>DAY 1 — 22ND AUG (7 STAGES)</span>
+                    <span>DAY 1 — 22ND AUG (8 STAGES)</span>
                   </button>
 
                   <button
@@ -889,8 +898,8 @@ export default function App() {
                     {/* Connected Stem Line & Scrollable Track */}
                     <div className="relative my-4 px-1 sm:px-4 overflow-x-auto scrollbar-none pb-4">
                       <div className="min-w-[620px] sm:min-w-0 relative py-2">
-                        <div className="absolute top-1/2 left-4 right-4 h-1 -translate-y-1/2 timeline-horiz-stem rounded-full overflow-hidden z-0">
-                          <div className="timeline-horiz-beam" />
+                        <div className="absolute top-1/2 left-4 right-4 h-1 -translate-y-1/2 timeline-horiz-stem rounded-full overflow-hidden z-0 bg-[#EAF2FA]/10">
+                          <div className="absolute top-0 left-0 h-full bg-[#FFB800] transition-all duration-700 shadow-[0_0_12px_rgba(255,184,0,0.6)]" style={{ width: `${Math.max(0, Math.min(100, (safeIdx / Math.max(1, currentEvents.length - 1)) * 100))}%` }} />
                         </div>
 
                         <div className="relative z-10 flex items-center justify-between gap-1 sm:gap-2">
@@ -918,41 +927,33 @@ export default function App() {
                                 className="group relative flex flex-col items-center shrink-0 cursor-pointer min-w-[72px] sm:min-w-[95px] focus:outline-none"
                               >
                                 <span className={`font-mono text-[10px] sm:text-[11px] font-bold mb-2 transition-colors ${
-                                  isSelected
-                                    ? isRed
-                                      ? 'text-[#E8483C]'
-                                      : isGreen
-                                      ? 'text-[#22C55E]'
-                                      : 'text-[#FFB800]' // Active is yellow/gold by default
-                                    : isPassed
-                                    ? 'text-[#22C55E]' // Completed items are green
-                                    : 'text-[#6B8BAE]' // Future items are dimmed
+                                  isGreen
+                                    ? 'text-[#22C55E]' // Evaluation text green
+                                    : 'text-[#FFB800]' // Everything else yellow
                                 }`}>
                                   {ev.time.split('–')[0].trim()}
                                 </span>
 
-                                <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
-                                  isSelected
-                                    ? isRed
-                                      ? 'bg-[#E8483C] border-white text-white shadow-[0_0_18px_rgba(232,72,60,0.7)] scale-110'
-                                      : isGreen
-                                      ? 'bg-[#123A63] border-[#22C55E] text-[#22C55E] shadow-[0_0_20px_rgba(34,197,94,0.5)] scale-110'
-                                      : 'bg-[#123A63] border-[#FFB800] text-[#FFB800] shadow-[0_0_20px_rgba(255,184,0,0.5)] scale-110'
-                                    : isPassed
-                                    ? 'bg-[#091C33] border-[#22C55E]/60 text-[#22C55E] group-hover:border-[#22C55E] group-hover:scale-105'
-                                    : 'bg-[#091C33] border-[#EAF2FA]/25 text-[#6B8BAE] group-hover:border-[#FFB800]/60 group-hover:text-white group-hover:scale-105'
+                                <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 flex items-center justify-center transition-all duration-300 z-10 relative ${
+                                  isGreen
+                                    ? 'bg-[#22C55E] border-[#22C55E] text-[#091C33] shadow-[0_0_20px_rgba(34,197,94,0.6)] scale-110' // Fully filled green
+                                    : isSelected
+                                      ? 'bg-[#123A63] border-[#FFB800] text-[#FFB800] shadow-[0_0_20px_rgba(255,184,0,0.5)] scale-110'
+                                      : isPassed
+                                        ? 'bg-[#FFB800] border-[#FFB800] text-[#091C33] shadow-[0_0_15px_rgba(255,184,0,0.4)] group-hover:scale-105' // Fully filled yellow for passed
+                                        : 'bg-[#091C33] border-[#FFB800]/50 text-[#FFB800] group-hover:border-[#FFB800] group-hover:text-white group-hover:scale-105'
                                 }`}>
                                   <IconComp className="w-4 h-4" />
                                 </div>
 
                                 <span className={`font-mono text-[8px] sm:text-[9px] mt-2 px-2 py-0.5 border rounded-full truncate max-w-[80px] sm:max-w-[95px] text-center uppercase tracking-tighter ${
-                                  isSelected
-                                    ? isGreen
-                                      ? 'bg-[#091C33] border-[#22C55E] text-[#22C55E] font-bold'
-                                      : 'bg-[#091C33] border-[#FFB800] text-[#FFB800] font-bold'
-                                    : isPassed
-                                    ? 'bg-[#091C33]/60 border-[#22C55E]/40 text-[#22C55E]'
-                                    : 'bg-[#091C33]/60 border-transparent text-[#6B8BAE]'
+                                  isGreen
+                                    ? 'bg-[#091C33] border-[#22C55E] text-[#22C55E] font-bold'
+                                    : isSelected
+                                      ? 'bg-[#091C33] border-[#FFB800] text-[#FFB800] font-bold'
+                                      : isPassed
+                                        ? 'bg-[#FFB800]/20 border-[#FFB800] text-[#FFB800]'
+                                        : 'bg-[#091C33]/60 border-[#FFB800]/40 text-[#FFB800]'
                                 }`}>
                                   {ev.badge}
                                 </span>
@@ -974,7 +975,7 @@ export default function App() {
                         ? 'border-[#FFB800] shadow-[0_0_30px_rgba(255,184,0,0.25)]'
                         : activeEvent.highlightType === 'green'
                         ? 'border-[#22C55E] shadow-[0_0_30px_rgba(34,197,94,0.25)]'
-                        : 'border-[#EAF2FA]/40'
+                        : 'border-[#FFB800]/50 shadow-[0_0_30px_rgba(255,184,0,0.15)]'
                     }`}
                   >
                     <div className="flex flex-wrap items-center justify-between gap-4 mb-4 font-mono text-xs border-b border-[#EAF2FA]/15 pb-4">
@@ -988,18 +989,20 @@ export default function App() {
                         </div>
                       </div>
 
-                      <span className={`px-3 py-1 text-[11px] font-bold uppercase tracking-wider rounded-full ${activeEvent.badgeStyle}`}>
+                      <span className={`px-3 py-1 text-[11px] font-bold uppercase tracking-wider rounded-full ${
+                        activeEvent.highlightType === 'green'
+                          ? 'bg-[#091C33] border border-[#22C55E] text-[#22C55E]'
+                          : 'bg-[#091C33] border border-[#FFB800] text-[#FFB800]'
+                      }`}>
                         {activeEvent.badge}
                       </span>
                     </div>
 
                     <div className="flex items-start gap-4 mb-6">
                       <div className={`p-3.5 border shrink-0 hidden sm:flex items-center justify-center rounded-xl ${
-                        activeEvent.highlightType === 'red'
-                          ? 'bg-[#E8483C] text-white border-white shadow-[0_0_15px_rgba(232,72,60,0.5)]'
-                          : activeEvent.highlightType === 'gold'
-                          ? 'bg-[#123A63] text-[#FFB800] border-[#FFB800] shadow-[0_0_15px_rgba(255,184,0,0.3)]'
-                          : 'bg-[#123A63] text-[#9FB8D4] border-[#EAF2FA]/30'
+                        activeEvent.highlightType === 'green'
+                          ? 'bg-[#091C33] text-[#22C55E] border-[#22C55E] shadow-[0_0_15px_rgba(34,197,94,0.3)]'
+                          : 'bg-[#123A63] text-[#FFB800] border-[#FFB800] shadow-[0_0_15px_rgba(255,184,0,0.3)]'
                       }`}>
                         <ActiveIcon className="w-7 h-7" />
                       </div>
