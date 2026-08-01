@@ -334,6 +334,13 @@ export default function App() {
     setSelectedStageIndex(foundIdx);
   }, [currentTime, autoProgress]);
 
+  useEffect(() => {
+    const el = document.getElementById(`timeline-btn-${activeTimelineDay}-${selectedStageIndex}`);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+  }, [selectedStageIndex, activeTimelineDay]);
+
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
   };
@@ -373,7 +380,7 @@ export default function App() {
           <div className="flex-1 flex justify-start">
             <a href="#" className="flex items-center gap-2.5 sm:gap-3 text-white font-display font-bold text-xs md:text-sm tracking-tight no-underline group">
               <img src={specLogo} alt="SPEC Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain rounded-md" />
-              <span className="leading-none text-white font-extrabold text-xs md:text-sm tracking-wider">SPEC INDUSTRY HACK 2026</span>
+              <span className="leading-none text-white font-extrabold text-[10px] sm:text-xs md:text-sm tracking-widest sm:tracking-wider whitespace-nowrap">SPEC INDUSTRY HACK 2026</span>
             </a>
           </div>
 
@@ -1035,6 +1042,7 @@ export default function App() {
 
                             return (
                               <button
+                                id={`timeline-btn-${activeTimelineDay}-${idx}`}
                                 key={idx}
                                 onClick={() => {
                                   setSelectedStageIndex(idx);
