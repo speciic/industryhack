@@ -208,15 +208,6 @@ const TIMELINE_DATA = {
       IconComponent: Terminal,
       highlightType: "standard",
       badgeStyle: "bg-[#091C33] border border-[#EAF2FA]/30 text-[#9FB8D4]"
-    },
-    {
-      time: "10:00 PM – 11:00 PM",
-      title: "Live Music, DJ & Campfire Jamming",
-      desc: "High-energy music and campfire session.",
-      badge: "MUSIC",
-      IconComponent: Music,
-      highlightType: "standard",
-      badgeStyle: "bg-[#091C33] border border-[#E8483C]/50 text-[#E8483C]"
     }
   ],
   2: [
@@ -815,7 +806,7 @@ export default function App() {
                     }`}
                   >
                     <Calendar className="w-4 h-4" />
-                    <span>DAY 1 — 22ND AUG (8 STAGES)</span>
+                    <span>DAY 1 — 22ND AUG (7 STAGES)</span>
                   </button>
 
                   <button
