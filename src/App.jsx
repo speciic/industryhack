@@ -883,11 +883,11 @@ export default function App() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="section-title">Hackathon Progression Structure</h2>
             <p className="section-subtitle mx-auto">
-              A rigorous 3-stage evaluation framework designed to test raw algorithmic execution, architectural ideation, and full-stack building.
+              A rigorous 4-stage evaluation framework designed to test raw algorithmic execution, architectural ideation, full-stack building, and overnight resilience.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative mb-8">
             
             <div className="bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl p-6 flex flex-col justify-between relative">
               <div>
@@ -927,17 +927,36 @@ export default function App() {
               </div>
             </div>
 
+            <div className="bg-[#123A63] border border-[#EAF2FA]/30 rounded-none p-6 flex flex-col justify-between relative">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-mono text-xs font-bold text-[#E8483C] px-3 py-1 bg-[#091C33] border border-[#E8483C]/40">
+                    STAGE 03
+                  </span>
+                  <span className="font-mono text-xs text-[#9FB8D4]">DAY 1 — EVENING</span>
+                </div>
+                <h3 className="text-lg font-bold font-display text-white mb-3">Level 3 — BuildX</h3>
+                <p className="text-sm text-[#9FB8D4] leading-relaxed mb-6">
+                  Shortlisted teams begin the intensive development phase, architecting their solutions and building core functionalities.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#EAF2FA]/20 flex items-center gap-2 text-xs font-mono text-[#9FB8D4]">
+                <CheckCircle2 className="w-4 h-4 text-[#FFB800]" />
+                <span>Core architecture &amp; development</span>
+              </div>
+            </div>
+
             <div className="bg-[#123A63] border-2 border-[#FFB800] rounded-none p-6 flex flex-col justify-between relative">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="font-mono text-xs font-bold text-[#FFB800] px-3 py-1 bg-[#091C33] border border-[#FFB800]">
-                    FINAL STAGE 03
+                    FINAL STAGE 04
                   </span>
                   <span className="font-mono text-xs text-[#9FB8D4]">DAY 1 NIGHT – DAY 2</span>
                 </div>
-                <h3 className="text-lg font-bold font-display text-white mb-3">Level 3 — BuildX</h3>
+                <h3 className="text-lg font-bold font-display text-white mb-3">Level 4 — Overnight Build</h3>
                 <p className="text-sm text-[#9FB8D4] leading-relaxed mb-6">
-                  Shortlisted teams execute end-to-end building overnight — engineering functional software prototypes, live models, and working code bases for final jury presentation.
+                  Teams execute end-to-end building overnight — engineering functional software prototypes, live models, and working code bases for final jury presentation.
                 </p>
               </div>
               <div className="pt-4 border-t border-[#EAF2FA]/20 flex items-center gap-2 text-xs font-mono text-[#FFB800]">
@@ -949,7 +968,7 @@ export default function App() {
           </div>
 
           <div className="p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-none text-center text-xs font-mono text-[#9FB8D4]">
-            <span className="text-[#E8483C] font-bold">[SELECTION CRITERIA]</span> Cumulative scores from <strong className="text-white">Level 1 (Code Sprint)</strong> and <strong className="text-white">Level 2 (Innovate)</strong> determine the final shortlist of teams advancing to <strong className="text-[#FFB800]">Level 3 (BuildX)</strong>.
+            <span className="text-[#E8483C] font-bold">[SELECTION CRITERIA]</span> Cumulative scores from <strong className="text-white">Level 1 (Code Sprint)</strong> and <strong className="text-white">Level 2 (Innovate)</strong> determine the final shortlist of teams advancing to <strong className="text-white">Level 3 (BuildX)</strong> and <strong className="text-[#FFB800]">Level 4 (Overnight Build)</strong>.
           </div>
 
         </div>
