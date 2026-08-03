@@ -57,6 +57,15 @@ section[id] {
   scroll-margin-top: 140px !important;
 }
 
+section[id]::before {
+  content: "";
+  display: block;
+  height: 140px;
+  margin-top: -140px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 /* Blueprint Graph Paper Background Grid (Fine Hairline Grid) */
 .bg-blueprint-grid {
   background-color: var(--bg-blueprint);

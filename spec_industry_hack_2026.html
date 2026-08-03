@@ -69,6 +69,15 @@
       scroll-margin-top: 140px !important;
     }
 
+    section[id]::before {
+      content: "";
+      display: block;
+      height: 140px;
+      margin-top: -140px;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
     body {
       background-color: var(--bg-blueprint);
       color: var(--text-dim);
