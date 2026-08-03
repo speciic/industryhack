@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Zap,
   Clock,
@@ -335,7 +335,13 @@ export default function App() {
     setSelectedStageIndex(foundIdx);
   }, [currentTime, autoProgress]);
 
+  const isInitialMount = useRef(true);
+
   useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
     const el = document.getElementById(`timeline-btn-${activeTimelineDay}-${selectedStageIndex}`);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
