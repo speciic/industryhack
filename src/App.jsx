@@ -948,8 +948,8 @@ export default function App() {
 
             <div className="bg-[#123A63] border-2 border-[#FFB800] rounded-none p-6 flex flex-col justify-between relative">
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-xs font-bold text-[#FFB800] px-3 py-1 bg-[#091C33] border border-[#FFB800]">
+                <div className="flex flex-col 2xl:flex-row items-start 2xl:items-center justify-between gap-2 mb-4">
+                  <span className="font-mono text-xs font-bold text-[#FFB800] px-3 py-1 bg-[#091C33] border border-[#FFB800] whitespace-nowrap w-max">
                     FINAL STAGE 04
                   </span>
                   <span className="font-mono text-xs text-[#9FB8D4]">DAY 1 NIGHT – DAY 2</span>
