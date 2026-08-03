@@ -44,10 +44,13 @@ html {
 }
 
 body {
-  overflow-x: hidden;
   background-color: var(--bg-blueprint);
   color: var(--text-dim);
   padding-top: 0;
+}
+
+#root {
+  overflow-x: hidden;
 }
 
 section[id] {
