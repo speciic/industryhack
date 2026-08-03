@@ -393,7 +393,7 @@ h1, h2, h3, h4, h5, h6 {
   /* Exclude marquee from visual freezes so it always scrolls */
   .marquee-content {
     animation-name: scroll-left !important;
-    animation-duration: 40s !important;
+    animation-duration: 25s !important;
     animation-iteration-count: infinite !important;
   }
 }
@@ -554,7 +554,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .marquee-content {
-  animation: scroll-left 40s linear infinite;
+  animation: scroll-left 25s linear infinite;
 }
 
 
