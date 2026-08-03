@@ -1509,7 +1509,7 @@ export default function App() {
 
             <div className="flex items-center gap-4 text-[#9FB8D4]">
               <a
-                href="https://www.instagram.com/specindustryhack?igsh=Nmg5bTRsaWkzaHN3"
+                href="https://www.instagram.com/spec.industryhack"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
