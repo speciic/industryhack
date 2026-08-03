@@ -56,9 +56,10 @@ import logo14 from '../assets/14.png';
 import logo15 from '../assets/15.png';
 import logo16 from '../assets/16.png';
 import logo17 from '../assets/17.jpeg';
+import logo18 from '../assets/18.jpeg';
 import specLogo from '../assets/spec.jpeg';
 
-const clubLogos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14, logo15, logo16, logo17];
+const clubLogos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14, logo15, logo16, logo17, logo18];
 
 const FORM_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSfy5-SALibn0Xa3l5RTMQTzYIud0cwCjErzYoWAA9aUbto6eQ/viewform?usp=publish-editor";
 
