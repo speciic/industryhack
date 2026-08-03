@@ -34,7 +34,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 120px;
   background-color: var(--bg-blueprint);
   color: var(--text-dim);
   font-family: var(--font-body);
@@ -51,19 +50,6 @@ body {
 
 #root {
   overflow-x: hidden;
-}
-
-section[id] {
-  scroll-margin-top: 140px !important;
-}
-
-section[id]::before {
-  content: "";
-  display: block;
-  height: 140px;
-  margin-top: -140px;
-  visibility: hidden;
-  pointer-events: none;
 }
 
 /* Blueprint Graph Paper Background Grid (Fine Hairline Grid) */
