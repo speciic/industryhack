@@ -395,6 +395,7 @@ export default function App() {
           <nav className="hidden lg:flex items-center justify-center gap-3 xl:gap-6 font-display text-[10px] xl:text-[11px] font-bold tracking-wider xl:tracking-widest uppercase">
             <a href="#about" className="text-[#9FB8D4] hover:text-white transition-colors no-underline">About</a>
             <a href="#themes" className="text-[#9FB8D4] hover:text-white transition-colors no-underline">Themes</a>
+            <a href="https://leaderboard.specindustryhack.co.in/" target="_blank" rel="noopener noreferrer" className="text-[#FFB800] hover:text-white transition-colors no-underline">Leaderboard</a>
             <a href="#structure" className="text-[#9FB8D4] hover:text-white transition-colors no-underline">Structure</a>
             <a href="#timeline" className="text-[#9FB8D4] hover:text-white transition-colors no-underline">Timeline</a>
             <a href="#prizes" className="text-[#9FB8D4] hover:text-white transition-colors no-underline">Prizes</a>
@@ -433,6 +434,7 @@ export default function App() {
           <div className="lg:hidden bg-[#0E2A4A]/95 backdrop-blur-xl border border-[#EAF2FA]/20 mt-2 px-6 py-6 flex flex-col gap-4 font-display text-sm font-bold tracking-wider uppercase rounded-2xl shadow-xl">
             <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-[#FFB800] py-1 no-underline">About</a>
             <a href="#themes" onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-[#FFB800] py-1 no-underline">Themes</a>
+            <a href="https://leaderboard.specindustryhack.co.in/" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="text-[#FFB800] hover:text-white py-1 no-underline">Leaderboard ↗</a>
             <a href="#structure" onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-[#FFB800] py-1 no-underline">Structure</a>
             <a href="#timeline" onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-[#FFB800] py-1 no-underline">Timeline</a>
             <a href="#prizes" onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-[#FFB800] py-1 no-underline">Prizes</a>
@@ -510,6 +512,15 @@ export default function App() {
             <a href="#themes" className="btn-ghost btn-ghost-lg">
               <span>Explore Themes</span>
               <ChevronRight className="w-5 h-5 text-[#9FB8D4]" />
+            </a>
+            <a
+              href="https://leaderboard.specindustryhack.co.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost btn-ghost-lg"
+            >
+              <span>Leaderboard</span>
+              <Trophy className="w-5 h-5 text-[#FFB800]" />
             </a>
           </div>
 
