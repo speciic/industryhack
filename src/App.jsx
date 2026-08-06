@@ -483,7 +483,7 @@ export default function App() {
 
           {/* Organizer Attribution */}
           <p className="text-xs sm:text-sm md:text-base text-[#9FB8D4] max-w-3xl mx-auto text-center mb-5 sm:mb-6 leading-relaxed hero-spacing-md">
-            Organized by <strong className="text-white font-semibold">St. Peter&apos;s Engineering College</strong>, in collaboration with <strong className="text-[#FFB800]">GeeksforGeeks Student Chapter</strong> &amp; <strong className="text-[#E8483C]">Spectrum Circle</strong>.
+            Organized by <strong className="text-white font-semibold">St. Peter&apos;s Engineering College</strong>, in collaboration with <strong className="text-[#E8483C]">Spectrum Circle</strong>.
           </p>
 
           {/* Event Dates & Venue Card Strip */}
@@ -615,10 +615,7 @@ export default function App() {
                     <span className="text-[#9FB8D4]">ORGANIZER</span>
                     <span className="text-white font-semibold">ST. PETER&apos;S ENGG COLLEGE</span>
                   </div>
-                  <div className="flex justify-between border-b border-[#EAF2FA]/15 py-1">
-                    <span className="text-[#9FB8D4]">ACADEMIC CHAPTER</span>
-                    <span className="text-[#FFB800] font-semibold">GEEKSFORGEEK STUDENT CHAPTER</span>
-                  </div>
+
                   <div className="flex justify-between border-b border-[#EAF2FA]/15 py-1">
                     <span className="text-[#9FB8D4]">TECHNICAL PARTNER</span>
                     <span className="text-[#E8483C] font-semibold">SPECTRUM CIRCLE</span>
@@ -660,73 +657,11 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            
-            <div className="tech-card flex flex-col justify-between">
-              <div>
-                <div className="inline-flex items-center justify-center px-3.5 py-1.5 bg-[#091C33] border border-[#FFB800] rounded-xl text-[#FFB800] mb-6 font-mono font-bold text-xs whitespace-nowrap shadow-sm">
-                  [DOMAIN-01]
-                </div>
-                <div className="flex items-center gap-2 mb-3">
-                  <Brain className="w-5 h-5 text-[#FFB800]" />
-                  <h3 className="text-lg font-bold font-display text-white">Artificial Intelligence</h3>
-                </div>
-                <p className="text-sm text-[#9FB8D4] leading-relaxed mb-6">
-                  Build predictive models, natural language understanding pipelines, computer vision systems, and data-driven decision frameworks that process complex industrial datasets with precision.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-[#EAF2FA]/20 flex flex-wrap gap-2 text-[11px] font-mono">
-                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Machine Learning</span>
-                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">NLP / Vision</span>
-                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Predictive Ops</span>
-              </div>
-            </div>
-
-            <div className="tech-card flex flex-col justify-between border-[#E8483C]/50">
-              <div>
-                <div className="inline-flex items-center justify-center px-3.5 py-1.5 bg-[#091C33] border border-[#E8483C] rounded-xl text-[#E8483C] mb-6 font-mono font-bold text-xs whitespace-nowrap shadow-sm">
-                  [DOMAIN-02]
-                </div>
-                <div className="flex items-center gap-2 mb-3">
-                  <Sparkles className="w-5 h-5 text-[#E8483C]" />
-                  <h3 className="text-lg font-bold font-display text-white">Agentic AI</h3>
-                </div>
-                <p className="text-sm text-[#9FB8D4] leading-relaxed mb-6">
-                  Design autonomous multi-agent networks, reasoning systems, tool-using AI orchestrators, and goal-driven workflows capable of executing end-to-end industry task automation.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-[#EAF2FA]/20 flex flex-wrap gap-2 text-[11px] font-mono">
-                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Autonomous Agents</span>
-                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Multi-Agent Systems</span>
-                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">LLM Tool Use</span>
-              </div>
-            </div>
-
-            <div className="tech-card flex flex-col justify-between">
-              <div>
-                <div className="inline-flex items-center justify-center px-3.5 py-1.5 bg-[#091C33] border border-[#FFB800] rounded-xl text-[#FFB800] mb-6 font-mono font-bold text-xs whitespace-nowrap shadow-sm">
-                  [DOMAIN-03]
-                </div>
-                <div className="flex items-center gap-2 mb-3">
-                  <Code2 className="w-5 h-5 text-[#FFB800]" />
-                  <h3 className="text-lg font-bold font-display text-white">Full Stack Development</h3>
-                </div>
-                <p className="text-sm text-[#9FB8D4] leading-relaxed mb-6">
-                  Engineer resilient web and cloud architectures, microservices APIs, intuitive real-time dashboards, and performant user interfaces built for high scale and reliability.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-[#EAF2FA]/20 flex flex-wrap gap-2 text-[11px] font-mono">
-                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Web &amp; Cloud API</span>
-                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Microservices</span>
-                <span className="px-2.5 py-1 bg-[#091C33] text-[#9FB8D4] border border-[#EAF2FA]/15 rounded-full">Real-Time UI</span>
-              </div>
-            </div>
-
-
-          </div>
-
-          <div className="max-w-2xl mx-auto text-center p-4 bg-[#123A63] border border-[#EAF2FA]/30 rounded-xl text-xs font-mono text-[#9FB8D4]">
-            <span className="text-[#E8483C] font-bold">[NOTE]</span> Problem statements are provided directly by our industry partners to ensure real-world technical relevance.
+          <div className="max-w-3xl mx-auto text-center p-8 bg-[#123A63] border-2 border-[#FFB800] rounded-2xl shadow-[0_0_30px_rgba(255,184,0,0.15)] relative overflow-hidden my-12">
+            <h3 className="text-xl font-bold font-display text-white mb-4">Themes &amp; Problem Statements</h3>
+            <p className="text-base text-[#9FB8D4] leading-relaxed">
+              To ensure real-world technical relevance and a fair competitive environment, the official themes and problem statements provided by our industry partners will be <strong className="text-[#FFB800]">revealed on the day of the event</strong>.
+            </p>
           </div>
 
         </div>
@@ -1314,6 +1249,7 @@ export default function App() {
               "Spectrum Circle & Unity Circle",
               "RivicQ Germany",
               "International Startup Foundation",
+              "Perfect Corp Organisation",
               "Kodryx AI",
               "Cliqin Health",
               "iRobotix Technologies",
@@ -1450,6 +1386,10 @@ export default function App() {
               {
                 q: "When will the problem statements be released?",
                 a: "Problem statements authored by our industry partners will be unveiled during the Inauguration Ceremony on Day 1 (August 22, 2026)."
+              },
+              {
+                q: "Is the registration fee refundable?",
+                a: "Money will not be refunded under any circumstances on the website, google form, or in the WhatsApp group."
               }
             ].map((faq, index) => (
               <div key={index} className="bg-[#123A63] border border-[#EAF2FA]/30 rounded-2xl overflow-hidden">
@@ -1484,7 +1424,7 @@ export default function App() {
                 Ready to solve real industry challenges?
               </h2>
               <p className="text-sm text-[#9FB8D4] max-w-xl mb-6">
-                Prepared by <strong className="text-white">St. Peter&apos;s Engineering College</strong>, in collaboration with <strong className="text-[#FFB800]">GeeksforGeeks Student Chapter</strong> &amp; <strong className="text-[#E8483C]">Spectrum Circle</strong>.
+                Prepared by <strong className="text-white">St. Peter&apos;s Engineering College</strong>, in collaboration with <strong className="text-[#E8483C]">Spectrum Circle</strong>.
               </p>
               
               <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-[#9FB8D4]">
